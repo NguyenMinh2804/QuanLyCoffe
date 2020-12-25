@@ -1,0 +1,202 @@
+﻿<Window x:Class="Cafe_Management3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cafe_Management3"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="{DynamicResource MaterialDesignPaper}"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+     ResizeMode="NoResize"
+     WindowStyle="None"
+     DataContext="{StaticResource MainVM}"
+    Top="0" Left="0"
+            xmlns:uc="clr-namespace:Cafe_Management3.UserControlA"
+                Name="MainWindow2"
+        Title="Citi Zone Coffe" Height="700" Width="1300">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadedWindowCommand}" 
+                                   CommandParameter="{Binding ElementName=MainWindow2}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" >
+            <uc:ControlBarUc Tag="{Binding Title, ElementName=www}"></uc:ControlBarUc>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions >
+            <Grid Grid.Column="0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="HỆ THỐNG" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Button Grid.Row="1" 
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"  Command="{Binding AccountCommand}"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Thêm người sử dụng">
+                </Button>
+                <Button Grid.Row="2"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Phân quyền truy cập">
+                </Button>
+            </Grid>
+            <Grid Grid.Column="1" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="TỒN KHO" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Button Grid.Row="1"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Phiếu nhập kho">
+                </Button>
+                <Button Grid.Row="2"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Phiếu xuất kho">
+                </Button>
+                <Button Grid.Row="3" Command="{Binding ItemCommand}"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục vật tư">
+                </Button>
+                <Button Grid.Row="4" Command="{Binding UnitCommand}"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục đơn vị tính"                        >
+                </Button>
+                <Button Grid.Row="5" 
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục quy đổi đơn vị tính">
+                </Button>
+                <Button Grid.Row="6"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Báo cáo nhập kho">
+                </Button>
+                <Button Grid.Row="7"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Báo cáo xuất kho">
+                </Button>
+                <Button Grid.Row="8"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Báo cáo tồn kho">
+                </Button>
+            </Grid>
+
+            <Grid Grid.Column="2" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="BÁN HÀNG" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Button Grid.Row="1" Command="{Binding KindSustenanceCommand}"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục loại đồ ăn, nước uống">
+                </Button>
+                <Button Grid.Row="2" Command="{Binding SustenanceCommand}"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục đồ ăn, nước uống">
+                </Button>
+                <Button Grid.Row="3"  Command="{Binding CustomerCommand}"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục khách hàng">
+                </Button>
+                <Button Grid.Row="4"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Báo cáo tổng hợp doanh thu">
+                </Button>
+            </Grid>
+            <Grid Grid.Column="3" >
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="55.25"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="NHÂN VIÊN" HorizontalAlignment="Center" Margin="0,15,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                <Button Grid.Row="1"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục loại nhân viên">
+                </Button>
+                <Button Grid.Row="2"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Danh mục nhân viên">
+                </Button>
+                <Button Grid.Row="3"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        Width="220"
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Báo cáo lương nhân viên">
+                </Button>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Cafe_Management3.ResourceXAML"
+                    xmlns:viewmodel="clr-namespace:Cafe_Management3.ViewModel">
+    <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:LoginViewModel x:Key="loginVM"></viewmodel:LoginViewModel>
+    <viewmodel:UnitViewModel x:Key="UnitVM"></viewmodel:UnitViewModel>
+    <viewmodel:LoaiMonViewModel x:Key="LoaiMonVM"></viewmodel:LoaiMonViewModel>
+    <viewmodel:MonViewModel x:Key="MonVM"></viewmodel:MonViewModel>
+</ResourceDictionary>

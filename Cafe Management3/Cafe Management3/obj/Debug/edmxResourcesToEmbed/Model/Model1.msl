@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="quanLyCafeModelStoreContainer" CdmEntityContainer="quanLyCafeEntities">
+    <EntitySetMapping Name="Account">
+      <EntityTypeMapping TypeName="quanLyCafeModel.Account">
+        <MappingFragment StoreEntitySet="Account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tai_khoan" ColumnName="tai_khoan" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="loai_tk" ColumnName="loai_tk" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ban">
+      <EntityTypeMapping TypeName="quanLyCafeModel.ban">
+        <MappingFragment StoreEntitySet="ban">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_ban" ColumnName="ma_ban" />
+          <ScalarProperty Name="ten_ban" ColumnName="ten_ban" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="chi_tiet_hoa_don">
+      <EntityTypeMapping TypeName="quanLyCafeModel.chi_tiet_hoa_don">
+        <MappingFragment StoreEntitySet="chi_tiet_hoa_don">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_cthd" ColumnName="ma_cthd" />
+          <ScalarProperty Name="ma_hoadon" ColumnName="ma_hoadon" />
+          <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dvt">
+      <EntityTypeMapping TypeName="quanLyCafeModel.dvt">
+        <MappingFragment StoreEntitySet="dvt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
+          <ScalarProperty Name="ten_dvt" ColumnName="ten_dvt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="hoa_don">
+      <EntityTypeMapping TypeName="quanLyCafeModel.hoa_don">
+        <MappingFragment StoreEntitySet="hoa_don">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_hoadon" ColumnName="ma_hoadon" />
+          <ScalarProperty Name="ma_ban" ColumnName="ma_ban" />
+          <ScalarProperty Name="ma_kh" ColumnName="ma_kh" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="khach_hang">
+      <EntityTypeMapping TypeName="quanLyCafeModel.khach_hang">
+        <MappingFragment StoreEntitySet="khach_hang">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_kh" ColumnName="ma_kh" />
+          <ScalarProperty Name="ten_kh" ColumnName="ten_kh" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="ma_loaikh" ColumnName="ma_loaikh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_kh">
+      <EntityTypeMapping TypeName="quanLyCafeModel.loai_kh">
+        <MappingFragment StoreEntitySet="loai_kh">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_loaikh" ColumnName="ma_loaikh" />
+          <ScalarProperty Name="ten_loaikh" ColumnName="ten_loaikh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_mon">
+      <EntityTypeMapping TypeName="quanLyCafeModel.loai_mon">
+        <MappingFragment StoreEntitySet="loai_mon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
+          <ScalarProperty Name="ten_loaiMon" ColumnName="ten_loaiMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_nv">
+      <EntityTypeMapping TypeName="quanLyCafeModel.loai_nv">
+        <MappingFragment StoreEntitySet="loai_nv">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_loainv" ColumnName="ma_loainv" />
+          <ScalarProperty Name="ten_loainv" ColumnName="ten_loainv" />
+          <ScalarProperty Name="luong" ColumnName="luong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="loai_vt">
+      <EntityTypeMapping TypeName="quanLyCafeModel.loai_vt">
+        <MappingFragment StoreEntitySet="loai_vt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_loaivt" ColumnName="ma_loaivt" />
+          <ScalarProperty Name="ten_loaivt" ColumnName="ten_loaivt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mon">
+      <EntityTypeMapping TypeName="quanLyCafeModel.mon">
+        <MappingFragment StoreEntitySet="mon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
+          <ScalarProperty Name="ten_mon" ColumnName="ten_mon" />
+          <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nhan_vien">
+      <EntityTypeMapping TypeName="quanLyCafeModel.nhan_vien">
+        <MappingFragment StoreEntitySet="nhan_vien">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_nv" ColumnName="ma_nv" />
+          <ScalarProperty Name="ten_nv" ColumnName="ten_nv" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="ma_loainv" ColumnName="ma_loainv" />
+          <ScalarProperty Name="he_so" ColumnName="he_so" />
+          <ScalarProperty Name="so_cmnd" ColumnName="so_cmnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phieu_nhap_kho">
+      <EntityTypeMapping TypeName="quanLyCafeModel.phieu_nhap_kho">
+        <MappingFragment StoreEntitySet="phieu_nhap_kho">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_phieu" ColumnName="ma_phieu" />
+          <ScalarProperty Name="stt_rect" ColumnName="stt_rect" />
+          <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+          <ScalarProperty Name="don_gia" ColumnName="don_gia" />
+          <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="phieu_xuat_kho">
+      <EntityTypeMapping TypeName="quanLyCafeModel.phieu_xuat_kho">
+        <MappingFragment StoreEntitySet="phieu_xuat_kho">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_phieu" ColumnName="ma_phieu" />
+          <ScalarProperty Name="stt_rect" ColumnName="stt_rect" />
+          <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
+          <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="quanLyCafeModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vat_tu">
+      <EntityTypeMapping TypeName="quanLyCafeModel.vat_tu">
+        <MappingFragment StoreEntitySet="vat_tu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
+          <ScalarProperty Name="ten_vt" ColumnName="ten_vt" />
+          <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
+          <ScalarProperty Name="gia_mua" ColumnName="gia_mua" />
+          <ScalarProperty Name="ma_loaivt" ColumnName="ma_loaivt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vmon">
+      <EntityTypeMapping TypeName="quanLyCafeModel.vmon">
+        <MappingFragment StoreEntitySet="vmon">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
+          <ScalarProperty Name="ten_mon" ColumnName="ten_mon" />
+          <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="ten_loaiMon" ColumnName="ten_loaiMon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="quanLyCafeModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="quanLyCafeModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="quanLyCafeModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="quanLyCafeModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quanLyCafeModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="quanLyCafeModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="quanLyCafeModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="quanLyCafeModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="quanLyCafeModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

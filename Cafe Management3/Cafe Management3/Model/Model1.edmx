@@ -1,0 +1,717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="quanLyCafeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tai_khoan" Type="char" MaxLength="16" />
+          <Property Name="password" Type="char" MaxLength="32" />
+          <Property Name="loai_tk" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="ban">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_ban" Type="char" MaxLength="8" />
+          <Property Name="ten_ban" Type="nvarchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="chi_tiet_hoa_don">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_cthd" Type="char" MaxLength="8" />
+          <Property Name="ma_hoadon" Type="char" MaxLength="8" />
+          <Property Name="ma_mon" Type="char" MaxLength="8" />
+          <Property Name="so_luong" Type="int" />
+          <Property Name="thanh_tien" Type="numeric" Precision="16" Scale="2" />
+        </EntityType>
+        <EntityType Name="dvt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_dvt" Type="nvarchar" MaxLength="8" />
+          <Property Name="ten_dvt" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="hoa_don">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_hoadon" Type="char" MaxLength="8" />
+          <Property Name="ma_ban" Type="char" MaxLength="8" />
+          <Property Name="ma_kh" Type="char" MaxLength="8" />
+          <Property Name="thanh_tien" Type="numeric" Precision="16" Scale="2" />
+        </EntityType>
+        <EntityType Name="khach_hang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_kh" Type="char" MaxLength="8" />
+          <Property Name="ten_kh" Type="nvarchar" MaxLength="256" />
+          <Property Name="dia_chi" Type="nvarchar" MaxLength="512" />
+          <Property Name="sdt" Type="char" MaxLength="16" />
+          <Property Name="email" Type="char" MaxLength="128" />
+          <Property Name="ma_loaikh" Type="char" MaxLength="8" />
+        </EntityType>
+        <EntityType Name="loai_kh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_loaikh" Type="char" MaxLength="8" />
+          <Property Name="ten_loaikh" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="loai_mon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_loaiMon" Type="char" MaxLength="8" />
+          <Property Name="ten_loaiMon" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="loai_nv">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_loainv" Type="char" MaxLength="8" />
+          <Property Name="ten_loainv" Type="nvarchar" MaxLength="256" />
+          <Property Name="luong" Type="numeric" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="loai_vt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_loaivt" Type="char" MaxLength="8" />
+          <Property Name="ten_loaivt" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="mon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_mon" Type="char" MaxLength="8" />
+          <Property Name="ten_mon" Type="nvarchar" MaxLength="256" />
+          <Property Name="ma_loaiMon" Type="char" MaxLength="8" />
+          <Property Name="gia" Type="numeric" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="nhan_vien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_nv" Type="char" MaxLength="8" />
+          <Property Name="ten_nv" Type="nvarchar" MaxLength="256" />
+          <Property Name="dia_chi" Type="nvarchar" MaxLength="512" />
+          <Property Name="sdt" Type="char" MaxLength="16" />
+          <Property Name="email" Type="char" MaxLength="128" />
+          <Property Name="ma_loainv" Type="char" MaxLength="8" />
+          <Property Name="he_so" Type="float" />
+          <Property Name="so_cmnd" Type="char" MaxLength="16" />
+        </EntityType>
+        <EntityType Name="phieu_nhap_kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_phieu" Type="char" MaxLength="8" />
+          <Property Name="stt_rect" Type="int" />
+          <Property Name="ma_vt" Type="char" MaxLength="8" />
+          <Property Name="so_luong" Type="float" />
+          <Property Name="ngay_nhap" Type="smalldatetime" />
+          <Property Name="don_gia" Type="numeric" Precision="16" Scale="0" />
+          <Property Name="thanh_tien" Type="numeric" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="phieu_xuat_kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_phieu" Type="char" MaxLength="8" />
+          <Property Name="stt_rect" Type="int" />
+          <Property Name="ma_vt" Type="char" MaxLength="8" />
+          <Property Name="so_luong" Type="float" />
+          <Property Name="ngay_nhap" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="vat_tu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ma_vt" Type="char" MaxLength="8" />
+          <Property Name="ten_vt" Type="nvarchar" MaxLength="256" />
+          <Property Name="ma_dvt" Type="nvarchar" MaxLength="8" />
+          <Property Name="gia_mua" Type="numeric" Precision="16" Scale="0" />
+          <Property Name="ma_loaivt" Type="char" MaxLength="8" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vmon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ma_mon" Type="char" MaxLength="8" />
+          <Property Name="ten_mon" Type="nvarchar" MaxLength="256" />
+          <Property Name="ma_loaiMon" Type="char" MaxLength="8" />
+          <Property Name="gia" Type="numeric" Precision="16" Scale="0" />
+          <Property Name="ten_loaiMon" Type="nvarchar" MaxLength="256" />
+        </EntityType>
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="version" Type="int" Mode="In" />
+          <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+        </Function>
+        <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+          <Parameter Name="owner_id" Type="int" Mode="In" />
+          <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+        </Function>
+        <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="quanLyCafeModelStoreContainer">
+          <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ban" EntityType="Self.ban" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dvt" EntityType="Self.dvt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="hoa_don" EntityType="Self.hoa_don" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="khach_hang" EntityType="Self.khach_hang" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loai_kh" EntityType="Self.loai_kh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loai_mon" EntityType="Self.loai_mon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loai_nv" EntityType="Self.loai_nv" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loai_vt" EntityType="Self.loai_vt" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="mon" EntityType="Self.mon" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vat_tu" EntityType="Self.vat_tu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vmon" EntityType="Self.vmon" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vmon].[id] AS [id], 
+    [vmon].[ma_mon] AS [ma_mon], 
+    [vmon].[ten_mon] AS [ten_mon], 
+    [vmon].[ma_loaiMon] AS [ma_loaiMon], 
+    [vmon].[gia] AS [gia], 
+    [vmon].[ten_loaiMon] AS [ten_loaiMon]
+    FROM [dbo].[vmon] AS [vmon]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="quanLyCafeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Account">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tai_khoan" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+          <Property Name="loai_tk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ban">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_ban" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_ban" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="chi_tiet_hoa_don">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_cthd" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ma_hoadon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="so_luong" Type="Int32" />
+          <Property Name="thanh_tien" Type="Decimal" Precision="16" Scale="2" />
+        </EntityType>
+        <EntityType Name="dvt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_dvt" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="ten_dvt" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="hoa_don">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_hoadon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ma_ban" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ma_kh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="thanh_tien" Type="Decimal" Precision="16" Scale="2" />
+        </EntityType>
+        <EntityType Name="khach_hang">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_kh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_kh" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+          <Property Name="ma_loaikh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="loai_kh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_loaikh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_loaikh" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="loai_mon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_loaiMon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="loai_nv">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_loainv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_loainv" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="luong" Type="Decimal" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="loai_vt">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_loaivt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_loaivt" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="mon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_mon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="gia" Type="Decimal" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="nhan_vien">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_nv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_nv" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+          <Property Name="sdt" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+          <Property Name="ma_loainv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="he_so" Type="Double" />
+          <Property Name="so_cmnd" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="phieu_nhap_kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_phieu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="stt_rect" Type="Int32" />
+          <Property Name="ma_vt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="so_luong" Type="Double" />
+          <Property Name="ngay_nhap" Type="DateTime" Precision="0" />
+          <Property Name="don_gia" Type="Decimal" Precision="16" Scale="0" />
+          <Property Name="thanh_tien" Type="Decimal" Precision="16" Scale="0" />
+        </EntityType>
+        <EntityType Name="phieu_xuat_kho">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_phieu" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="stt_rect" Type="Int32" />
+          <Property Name="ma_vt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="so_luong" Type="Double" />
+          <Property Name="ngay_nhap" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="vat_tu">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ma_vt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_vt" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ma_dvt" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+          <Property Name="gia_mua" Type="Decimal" Precision="16" Scale="0" />
+          <Property Name="ma_loaivt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vmon">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="ten_mon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+          <Property Name="gia" Type="Decimal" Precision="16" Scale="0" />
+          <Property Name="ten_loaiMon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="quanLyCafeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Account" EntityType="Self.Account" />
+          <EntitySet Name="ban" EntityType="Self.ban" />
+          <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" />
+          <EntitySet Name="dvt" EntityType="Self.dvt" />
+          <EntitySet Name="hoa_don" EntityType="Self.hoa_don" />
+          <EntitySet Name="khach_hang" EntityType="Self.khach_hang" />
+          <EntitySet Name="loai_kh" EntityType="Self.loai_kh" />
+          <EntitySet Name="loai_mon" EntityType="Self.loai_mon" />
+          <EntitySet Name="loai_nv" EntityType="Self.loai_nv" />
+          <EntitySet Name="loai_vt" EntityType="Self.loai_vt" />
+          <EntitySet Name="mon" EntityType="Self.mon" />
+          <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" />
+          <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" />
+          <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="vat_tu" EntityType="Self.vat_tu" />
+          <EntitySet Name="vmon" EntityType="Self.vmon" />
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(quanLyCafeModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(quanLyCafeModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+        </EntityContainer>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="quanLyCafeModelStoreContainer" CdmEntityContainer="quanLyCafeEntities">
+          <EntitySetMapping Name="Account">
+            <EntityTypeMapping TypeName="quanLyCafeModel.Account">
+              <MappingFragment StoreEntitySet="Account">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tai_khoan" ColumnName="tai_khoan" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="loai_tk" ColumnName="loai_tk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ban">
+            <EntityTypeMapping TypeName="quanLyCafeModel.ban">
+              <MappingFragment StoreEntitySet="ban">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_ban" ColumnName="ma_ban" />
+                <ScalarProperty Name="ten_ban" ColumnName="ten_ban" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="chi_tiet_hoa_don">
+            <EntityTypeMapping TypeName="quanLyCafeModel.chi_tiet_hoa_don">
+              <MappingFragment StoreEntitySet="chi_tiet_hoa_don">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_cthd" ColumnName="ma_cthd" />
+                <ScalarProperty Name="ma_hoadon" ColumnName="ma_hoadon" />
+                <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dvt">
+            <EntityTypeMapping TypeName="quanLyCafeModel.dvt">
+              <MappingFragment StoreEntitySet="dvt">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
+                <ScalarProperty Name="ten_dvt" ColumnName="ten_dvt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="hoa_don">
+            <EntityTypeMapping TypeName="quanLyCafeModel.hoa_don">
+              <MappingFragment StoreEntitySet="hoa_don">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_hoadon" ColumnName="ma_hoadon" />
+                <ScalarProperty Name="ma_ban" ColumnName="ma_ban" />
+                <ScalarProperty Name="ma_kh" ColumnName="ma_kh" />
+                <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="khach_hang">
+            <EntityTypeMapping TypeName="quanLyCafeModel.khach_hang">
+              <MappingFragment StoreEntitySet="khach_hang">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_kh" ColumnName="ma_kh" />
+                <ScalarProperty Name="ten_kh" ColumnName="ten_kh" />
+                <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="ma_loaikh" ColumnName="ma_loaikh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loai_kh">
+            <EntityTypeMapping TypeName="quanLyCafeModel.loai_kh">
+              <MappingFragment StoreEntitySet="loai_kh">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_loaikh" ColumnName="ma_loaikh" />
+                <ScalarProperty Name="ten_loaikh" ColumnName="ten_loaikh" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loai_mon">
+            <EntityTypeMapping TypeName="quanLyCafeModel.loai_mon">
+              <MappingFragment StoreEntitySet="loai_mon">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
+                <ScalarProperty Name="ten_loaiMon" ColumnName="ten_loaiMon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loai_nv">
+            <EntityTypeMapping TypeName="quanLyCafeModel.loai_nv">
+              <MappingFragment StoreEntitySet="loai_nv">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_loainv" ColumnName="ma_loainv" />
+                <ScalarProperty Name="ten_loainv" ColumnName="ten_loainv" />
+                <ScalarProperty Name="luong" ColumnName="luong" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="loai_vt">
+            <EntityTypeMapping TypeName="quanLyCafeModel.loai_vt">
+              <MappingFragment StoreEntitySet="loai_vt">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_loaivt" ColumnName="ma_loaivt" />
+                <ScalarProperty Name="ten_loaivt" ColumnName="ten_loaivt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="mon">
+            <EntityTypeMapping TypeName="quanLyCafeModel.mon">
+              <MappingFragment StoreEntitySet="mon">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
+                <ScalarProperty Name="ten_mon" ColumnName="ten_mon" />
+                <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="nhan_vien">
+            <EntityTypeMapping TypeName="quanLyCafeModel.nhan_vien">
+              <MappingFragment StoreEntitySet="nhan_vien">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_nv" ColumnName="ma_nv" />
+                <ScalarProperty Name="ten_nv" ColumnName="ten_nv" />
+                <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+                <ScalarProperty Name="sdt" ColumnName="sdt" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="ma_loainv" ColumnName="ma_loainv" />
+                <ScalarProperty Name="he_so" ColumnName="he_so" />
+                <ScalarProperty Name="so_cmnd" ColumnName="so_cmnd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phieu_nhap_kho">
+            <EntityTypeMapping TypeName="quanLyCafeModel.phieu_nhap_kho">
+              <MappingFragment StoreEntitySet="phieu_nhap_kho">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_phieu" ColumnName="ma_phieu" />
+                <ScalarProperty Name="stt_rect" ColumnName="stt_rect" />
+                <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+                <ScalarProperty Name="don_gia" ColumnName="don_gia" />
+                <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="phieu_xuat_kho">
+            <EntityTypeMapping TypeName="quanLyCafeModel.phieu_xuat_kho">
+              <MappingFragment StoreEntitySet="phieu_xuat_kho">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_phieu" ColumnName="ma_phieu" />
+                <ScalarProperty Name="stt_rect" ColumnName="stt_rect" />
+                <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
+                <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+                <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="quanLyCafeModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vat_tu">
+            <EntityTypeMapping TypeName="quanLyCafeModel.vat_tu">
+              <MappingFragment StoreEntitySet="vat_tu">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
+                <ScalarProperty Name="ten_vt" ColumnName="ten_vt" />
+                <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
+                <ScalarProperty Name="gia_mua" ColumnName="gia_mua" />
+                <ScalarProperty Name="ma_loaivt" ColumnName="ma_loaivt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vmon">
+            <EntityTypeMapping TypeName="quanLyCafeModel.vmon">
+              <MappingFragment StoreEntitySet="vmon">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
+                <ScalarProperty Name="ten_mon" ColumnName="ten_mon" />
+                <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
+                <ScalarProperty Name="gia" ColumnName="gia" />
+                <ScalarProperty Name="ten_loaiMon" ColumnName="ten_loaiMon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="quanLyCafeModel.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="quanLyCafeModel.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="quanLyCafeModel.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="quanLyCafeModel.Store.sp_helpdiagramdefinition">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="quanLyCafeModel.sp_helpdiagramdefinition_Result">
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="quanLyCafeModel.Store.sp_helpdiagrams">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="quanLyCafeModel.sp_helpdiagrams_Result">
+                <ScalarProperty Name="Database" ColumnName="Database" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="quanLyCafeModel.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="quanLyCafeModel.Store.sp_upgraddiagrams" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

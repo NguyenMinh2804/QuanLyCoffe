@@ -1,0 +1,49 @@
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\AccountWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\MainWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\UserControlA\ControlBarUc.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\App.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3_MarkupCompile.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3_MarkupCompile.lref
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\Cafe Management3.exe.config
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\Cafe Management3.exe
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\Cafe Management3.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\MaterialDesignColors.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\MaterialDesignColors.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\App.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\AccountWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\MainWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ResourceXAML\MainResource.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\UserControlA\ControlBarUc.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.g.resources
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe_Management3.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.exe
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Login.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Login.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\CustomerWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ItemWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\KindSustenanceWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\SustenanceWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\UnitWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\CustomerWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ItemWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\KindSustenanceWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\SustenanceWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\UnitWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFramework.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFramework.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3_Content.g.cs
