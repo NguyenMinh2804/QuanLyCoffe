@@ -12,20 +12,21 @@
      TextElement.FontSize="13"
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
+     Background="LightGray"
      FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        x:Name="windowitem"       
-        Title="Danh mục vật tư" Height="500" Width="600">
+        x:Name="window"       
+        Title="Danh mục vật tư" Height="500" Width="600"
+        Loaded="window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <uc:ControlBarUc Tag="{Binding Title, ElementName=windowitem}"></uc:ControlBarUc>
+            <uc:ControlBarUc Tag="{Binding Title, ElementName=window}"></uc:ControlBarUc>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -42,31 +43,32 @@
                         <RowDefinition></RowDefinition>
                         <RowDefinition></RowDefinition>
                     </Grid.RowDefinitions>
-                    <TextBox Grid.Row="0" Text="{Binding ma_vt, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Mã vật tư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Grid.Row="1" Text="{Binding ten_vt, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Tên vật tư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <ComboBox Grid.Row="2" Margin="5 5 15 5" ItemsSource="{Binding Item}" SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Đơn vị tính" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <TextBox x:Name="mavt" Grid.Row="0" Margin="5 5 400 5" materialDesign:HintAssist.Hint="Mã vật tư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox x:Name="ten" Grid.Row="1"  Margin="5 5 5 5" materialDesign:HintAssist.Hint="Tên vật tư" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox x:Name="dvt" Grid.Row="2" Margin="5 5 400 5" materialDesign:HintAssist.Hint="Đơn vị tính" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
                 </Grid>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Margin="5" Width="100"></Button>
+                    <Button x:Name="them" Background="SteelBlue" Foreground="Black" BorderBrush="Green" Content="Thêm" Margin="5" Width="100" Click="them_Click"></Button>
+                    <Button x:Name="sua" Background="SteelBlue" Foreground="Black" BorderBrush="Green"  Content="Sửa" Margin="5" Width="100" Click="sua_Click"></Button>
+                    <Button x:Name="xoa" Background="SteelBlue" Foreground="Black" BorderBrush="Green"   Content="Xóa" Margin="5" Width="100" Click="xoa_Click"></Button>
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn Width="150" Header="Mã vật tư" DisplayMemberBinding="{Binding ma_dvt}"></GridViewColumn>
-                                <GridViewColumn Width="200" Header="Tên vật tư" DisplayMemberBinding="{Binding ten_dvt}"></GridViewColumn>
-                                <GridViewColumn Width="150" Header="Mã đơn vị tính" DisplayMemberBinding="{Binding ten_dvt}"></GridViewColumn>
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
+                    <Grid>
+                        <materialDesign:Card Margin="5" VerticalAlignment="Stretch">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <DataGrid IsReadOnly="True" SelectionChanged="hoa_don_SelectionChanged" ItemsSource="{Binding}" Height="auto" x:Name="hoa_don">
+                                    <DataGrid.Columns>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </ScrollViewer>
+                        </materialDesign:Card>
+                    </Grid>
                 </ScrollViewer>
             </materialDesign:Card>
         </Grid>

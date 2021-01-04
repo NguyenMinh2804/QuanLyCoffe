@@ -19,6 +19,5 @@ namespace Cafe_Management3.Model
         public string ten_mon { get; set; }
         public string ma_loaiMon { get; set; }
         public Nullable<decimal> gia { get; set; }
-
-}
+    }
 }

@@ -27,5 +27,46 @@ namespace Cafe_Management3.UserControlA
             InitializeComponent();
             this.DataContext = Viewmodel = new ControlBarViewModel();
         }
+        private void list_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            MainWindow mw = new MainWindow();
+            OrderWindow or = new OrderWindow(); 
+            Login log = new Login();
+            if (list_box.SelectedIndex == 0 )
+            {
+                if (mw.IsActive == false)
+                {
+                    mw.Show();
+                }
+            }
+            if (list_box.SelectedIndex == 1)
+            {
+               mw.Show();
+
+            }
+            if (list_box.SelectedIndex == 2)
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    if (window.Name != "loginWindow")
+                    {
+                        window.Hide();
+                    }
+                }
+                log.Show();
+            }
+            list_box.SelectedIndex = -1;
+        }
+
+        private void ucControlBar_Loaded(object sender, RoutedEventArgs e)
+        {
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window.Name == "window" || window.Name == "MainWindow2")
+                {
+                    list_box.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
     }
 }

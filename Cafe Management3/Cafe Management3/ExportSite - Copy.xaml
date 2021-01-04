@@ -1,0 +1,86 @@
+﻿<Window x:Class="Cafe_Management3.ImportSite"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cafe_Management3"
+        mc:Ignorable="d"
+         xmlns:uc="clr-namespace:Cafe_Management3.UserControlA"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+     TextElement.FontWeight="Regular"
+     TextElement.FontSize="13"
+     TextOptions.TextFormattingMode="Ideal"
+     TextOptions.TextRenderingMode="Auto"
+     Background="LightGray"
+     FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        x:Name="window"       
+        Title="Danh mục vật tư" Height="700" Width="900"
+        Loaded="window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <uc:ControlBarUc Tag="{Binding Title, ElementName=window}"></uc:ControlBarUc>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!--các element binding từ selected item-->
+            <materialDesign:Card Grid.Row="0" Margin="5">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <DatePicker x:Name="ngay"  Grid.Column="2" Margin="136,5,5,5"
+  materialDesign:HintAssist.Hint="Ngày nhập"
+  Style="{StaticResource MaterialDesignFloatingHintDatePicker}" />
+                    <ComboBox x:Name="ncc" Grid.Row="0" Grid.Column="0" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Nhà cung cấp" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <ComboBox x:Name="vatu" Grid.Row="0" Grid.Column="1" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Vật tư" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <ComboBox x:Name="dvt" Grid.Row="0" Grid.Column="2" Margin="5,6,178,7" materialDesign:HintAssist.Hint="Đơn vị tính" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}"></ComboBox>
+                    <TextBox HorizontalContentAlignment="Right"  TextChanged="sl_TextChanged" PreviewTextInput="sl_PreviewTextInput" x:Name="sl" Grid.Row="1"  Grid.Column="0" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Số lượng" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox HorizontalContentAlignment="Right" TextChanged="gia_TextChanged" PreviewTextInput="gia_PreviewTextInput" x:Name="gia" Grid.Row="1"  Grid.Column="1"  Margin="5 5 5 5" materialDesign:HintAssist.Hint="Đơn giá" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox HorizontalContentAlignment="Right" x:Name="tien" IsReadOnly="True" Grid.Row="1" Grid.Column="2" Margin="5 5 5 5" materialDesign:HintAssist.Hint="Thành tiền" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+
+                </Grid>
+            </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="1" Margin="5">
+                <WrapPanel>
+                    <Button x:Name="them" Background="SteelBlue" Foreground="Black" BorderBrush="Green" Content="Thêm" Margin="5" Width="100" Click="them_Click"></Button>
+                    <Button x:Name="sua" Background="SteelBlue" Foreground="Black" BorderBrush="Green"  Content="Sửa" Margin="5" Width="100" Click="sua_Click"></Button>
+                    <Button x:Name="xoa" Background="SteelBlue" Foreground="Black" BorderBrush="Green"   Content="Xóa" Margin="5" Width="100" Click="xoa_Click"></Button>
+                </WrapPanel>
+            </materialDesign:Card>
+
+            <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
+                <ScrollViewer VerticalScrollBarVisibility="Auto">
+                    <Grid>
+                        <materialDesign:Card Margin="5" VerticalAlignment="Stretch">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <DataGrid IsReadOnly="True" SelectionChanged="hoa_don_SelectionChanged" ItemsSource="{Binding}" Height="auto" x:Name="hoa_don">
+                                    <DataGrid.Columns>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </ScrollViewer>
+                        </materialDesign:Card>
+                    </Grid>
+                </ScrollViewer>
+            </materialDesign:Card>
+        </Grid>
+    </Grid>
+</Window>

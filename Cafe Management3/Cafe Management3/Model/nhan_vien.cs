@@ -23,5 +23,6 @@ namespace Cafe_Management3.Model
         public string ma_loainv { get; set; }
         public Nullable<double> he_so { get; set; }
         public string so_cmnd { get; set; }
+        public string status { get; set; }
     }
 }

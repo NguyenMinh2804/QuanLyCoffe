@@ -18,7 +18,5 @@ namespace Cafe_Management3.Model
         public string ma_vt { get; set; }
         public string ten_vt { get; set; }
         public string ma_dvt { get; set; }
-        public Nullable<decimal> gia_mua { get; set; }
-        public string ma_loaivt { get; set; }
     }
 }

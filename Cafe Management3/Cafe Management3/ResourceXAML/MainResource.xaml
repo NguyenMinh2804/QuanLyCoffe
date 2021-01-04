@@ -7,4 +7,6 @@
     <viewmodel:UnitViewModel x:Key="UnitVM"></viewmodel:UnitViewModel>
     <viewmodel:LoaiMonViewModel x:Key="LoaiMonVM"></viewmodel:LoaiMonViewModel>
     <viewmodel:MonViewModel x:Key="MonVM"></viewmodel:MonViewModel>
+    <viewmodel:OrderViewModel x:Key="OderVM"></viewmodel:OrderViewModel>
+    <viewmodel:VattuViewModel x:Key="VattuVM"></viewmodel:VattuViewModel>
 </ResourceDictionary>

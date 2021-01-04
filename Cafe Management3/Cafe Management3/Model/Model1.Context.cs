@@ -33,17 +33,52 @@ namespace Cafe_Management3.Model
         public virtual DbSet<dvt> dvt { get; set; }
         public virtual DbSet<hoa_don> hoa_don { get; set; }
         public virtual DbSet<khach_hang> khach_hang { get; set; }
-        public virtual DbSet<loai_kh> loai_kh { get; set; }
         public virtual DbSet<loai_mon> loai_mon { get; set; }
         public virtual DbSet<loai_nv> loai_nv { get; set; }
-        public virtual DbSet<loai_vt> loai_vt { get; set; }
         public virtual DbSet<mon> mon { get; set; }
+        public virtual DbSet<nha_cc> nha_cc { get; set; }
         public virtual DbSet<nhan_vien> nhan_vien { get; set; }
         public virtual DbSet<phieu_nhap_kho> phieu_nhap_kho { get; set; }
         public virtual DbSet<phieu_xuat_kho> phieu_xuat_kho { get; set; }
+        public virtual DbSet<qui_doivt> qui_doivt { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<vat_tu> vat_tu { get; set; }
         public virtual DbSet<vmon> vmon { get; set; }
+    
+        public virtual int bao_cao_ct_hd(string ngay_tu, string ngay_den)
+        {
+            var ngay_tuParameter = ngay_tu != null ?
+                new ObjectParameter("ngay_tu", ngay_tu) :
+                new ObjectParameter("ngay_tu", typeof(string));
+    
+            var ngay_denParameter = ngay_den != null ?
+                new ObjectParameter("ngay_den", ngay_den) :
+                new ObjectParameter("ngay_den", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("bao_cao_ct_hd", ngay_tuParameter, ngay_denParameter);
+        }
+    
+        public virtual int bao_cao_hd(string ngay_tu, string ngay_den)
+        {
+            var ngay_tuParameter = ngay_tu != null ?
+                new ObjectParameter("ngay_tu", ngay_tu) :
+                new ObjectParameter("ngay_tu", typeof(string));
+    
+            var ngay_denParameter = ngay_den != null ?
+                new ObjectParameter("ngay_den", ngay_den) :
+                new ObjectParameter("ngay_den", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("bao_cao_hd", ngay_tuParameter, ngay_denParameter);
+        }
+    
+        public virtual int column_chart(Nullable<int> nam)
+        {
+            var namParameter = nam.HasValue ?
+                new ObjectParameter("nam", nam) :
+                new ObjectParameter("nam", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("column_chart", namParameter);
+        }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

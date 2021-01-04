@@ -47,3 +47,28 @@ C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFr
 C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFramework.xml
 C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3_Content.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\OrderWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\OrderWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\cthd.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\cthd.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Baocaodoanhthu.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Baocaodoanhthu.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Cafe Management3.csproj.ResolveComReference.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Baocaoctdoanhthu.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Baocaoctdoanhthu.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ChartColumn.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ChartColumn.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Window1.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Window1.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\KindStaffWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\KindStaffWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\StaffWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\StaffWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ConvertUnit.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ConvertUnit.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Supplier.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Supplier.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ImportSite.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ImportSite.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ExxportSite.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ExxportSite.baml

@@ -27,6 +27,7 @@ namespace Cafe_Management3.ViewModel
                 {
                     w.Close();
                 }
+                
             }
             );
             MaximizeWindowCommand = new RelayCommand<UserControl>((p) => { return p == null ? false : true; }, (p) =>

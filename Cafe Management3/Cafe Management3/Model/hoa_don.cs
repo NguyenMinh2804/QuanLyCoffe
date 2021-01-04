@@ -16,8 +16,11 @@ namespace Cafe_Management3.Model
     {
         public int id { get; set; }
         public string ma_hoadon { get; set; }
-        public string ma_ban { get; set; }
         public string ma_kh { get; set; }
         public Nullable<decimal> thanh_tien { get; set; }
+        public Nullable<decimal> giam_gia { get; set; }
+        public Nullable<decimal> thanh_toan { get; set; }
+        public Nullable<System.DateTime> ngay_hd { get; set; }
+        public string status { get; set; }
     }
 }

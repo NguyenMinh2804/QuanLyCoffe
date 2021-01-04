@@ -35,8 +35,8 @@ namespace Cafe_Management3.ViewModel
             }
         }
         private string _ma_dvt;
-        public string ma_dvt { get => _ma_dvt; set { _ma_dvt = value; OnPropertyChanged(); } }
         private string _ten_dvt;
+        public string ma_dvt { get => _ma_dvt; set { _ma_dvt = value; OnPropertyChanged(); } }
         public string ten_dvt { get => _ten_dvt; set { _ten_dvt = value; OnPropertyChanged(); } }
         public UnitViewModel()
         {

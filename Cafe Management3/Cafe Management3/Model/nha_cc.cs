@@ -12,10 +12,13 @@ namespace Cafe_Management3.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class loai_vt
+    public partial class nha_cc
     {
         public int id { get; set; }
-        public string ma_loaivt { get; set; }
-        public string ten_loaivt { get; set; }
+        public string ma_kh { get; set; }
+        public string ten_kh { get; set; }
+        public string dia_chi { get; set; }
+        public string sdt { get; set; }
+        public string email { get; set; }
     }
 }

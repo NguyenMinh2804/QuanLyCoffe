@@ -31,7 +31,6 @@ namespace Cafe_Management3.ViewModel
                 OnPropertyChanged();
                 if (SelectedItem != null)
                 {
-                    SelectedLoaiMon = SelectedItem.Loai_Mon;
                     ten_mon = SelectedItem.ten_mon;
                     ma_mon = SelectedItem.ma_mon;
                     gia = (decimal)SelectedItem.gia;
@@ -64,12 +63,12 @@ namespace Cafe_Management3.ViewModel
             loai_mon = new ObservableCollection<loai_mon>(DataPovider.Ins.DB.loai_mon);
             AddCommand = new RelayCommand<object>((p) =>
             {
-                //if (string.IsNullOrEmpty(ma_mon) || string.IsNullOrEmpty(ten_mon) || string.IsNullOrEmpty(ma_loaiMon))
-                //    return false;
+                if (string.IsNullOrEmpty(ma_mon) || string.IsNullOrEmpty(ten_mon))
+                    return false;
 
-                //var displayList = DataPovider.Ins.DB.mon.Where(x => x.ma_mon == ma_mon);
-                //if (displayList == null || displayList.Count() != 0)
-                //    return false;
+                var displayList = DataPovider.Ins.DB.mon.Where(x => x.ma_mon == ma_mon);
+                if (displayList == null || displayList.Count() != 0)
+                    return false;
                 return true;
 
             }, (p) =>
@@ -81,13 +80,13 @@ namespace Cafe_Management3.ViewModel
             });
             EditCommand = new RelayCommand<object>((p) =>
             {
-                //if (string.IsNullOrEmpty(ma_mon) || string.IsNullOrEmpty(ten_mon) || string.IsNullOrEmpty(ma_loaiMon) | SelectedItem == null)
-                //    return false;
+                if (string.IsNullOrEmpty(ma_mon) || string.IsNullOrEmpty(ten_mon) || SelectedItem == null)
+                    return false;
 
-                //var displayList = DataPovider.Ins.DB.mon.Where(x => (x.ma_mon == ma_mon) && (x.ma_mon != SelectedItem.ma_mon));
+                var displayList = DataPovider.Ins.DB.mon.Where(x => (x.ma_mon == ma_mon) && (x.ma_mon != SelectedItem.ma_mon));
 
-                //if (displayList == null || displayList.Count() != 0)
-                //    return false;
+                if (displayList == null || displayList.Count() != 0)
+                    return false;
 
                 return true;
 

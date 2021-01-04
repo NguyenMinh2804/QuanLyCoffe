@@ -14,7 +14,7 @@
      TextOptions.TextFormattingMode="Ideal"
      TextOptions.TextRenderingMode="Auto"
      DataContext="{StaticResource MonVM}"
-     Background="{DynamicResource MaterialDesignPaper}"
+     Background="LightGray"
      FontFamily="{DynamicResource MaterialDesignFont}"
         ResizeMode="NoResize"
         WindowStyle="None"
@@ -49,21 +49,21 @@
                     </Grid.ColumnDefinitions>
                     <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding ma_mon, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Mã món" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox Grid.Row="1" Grid.Column="0" Text="{Binding ten_mon, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Tên món" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding gia, UpdateSourceTrigger=PropertyChanged}" Margin="5" materialDesign:HintAssist.Hint="Giá" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <ComboBox Grid.Row="1" Grid.Column="1" DisplayMemberPath="ten_loaiMon" Margin="5,7,15,0" ItemsSource="{Binding loai_mon}" SelectedItem="{Binding SelectedLoaiMon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Loại món" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Top"></ComboBox>
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding gia, UpdateSourceTrigger=PropertyChanged}" Margin="5,5,15,5" materialDesign:HintAssist.Hint="Giá" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <ComboBox x:Name="cbb" Grid.Row="1" Grid.Column="1" DisplayMemberPath="ten_loaiMon" Margin="5,7,15,0" ItemsSource="{Binding loai_mon}" SelectedItem="{Binding SelectedLoaiMon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Loại món" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" VerticalAlignment="Top"></ComboBox>
                 </Grid>
             </materialDesign:Card>
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
-                    <Button Command="{Binding DeleteCommand}" Content="Xóa" Width="100"/>
+                    <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
+                    <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
+                    <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding DeleteCommand}" Content="Xóa" Width="100"/>
                 </WrapPanel>
             </materialDesign:Card>
 
             <materialDesign:Card Grid.Row="2" Margin="5" VerticalAlignment="Stretch">
                 <ScrollViewer VerticalScrollBarVisibility="Auto">
-                    <ListView ItemsSource="{Binding List}" SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
+                    <ListView x:Name="list_view" ItemsSource="{Binding List}"  SelectedItem="{Binding SelectedItem, Mode=OneWayToSource}">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Width="200" Header="Mã món" DisplayMemberBinding="{Binding ma_mon}"></GridViewColumn>

@@ -27,28 +27,28 @@ namespace Cafe_Management3.ViewModel
         // mọi thứ xử lý sẽ nằm trong này
         public MainViewModel()
         {
-            LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
-                Isloaded = true;
-                if (p == null)
-                    return;
-                p.Hide();
-                Login loginWindow = new Login();
-                loginWindow.ShowDialog();
+    //        LoadedWindowCommand = new RelayCommand<Window>((p) => { return true; }, (p) => {
+    //            Isloaded = true;
+    //            if (p == null)
+    //                return;
+    //            p.Hide();
+    //            Login loginWindow = new Login();
+    //            loginWindow.ShowDialog();
 
-                if (loginWindow.DataContext == null)
-                    return;
-                var loginVM = loginWindow.DataContext as LoginViewModel;
+    //            if (loginWindow.DataContext == null)
+    //                return;
+    //            var loginVM = loginWindow.DataContext as LoginViewModel;
 
-                if (loginVM.IsLogin)
-                {
-                    p.Show();
-                }
-                else
-                {
-                    p.Close();
-                }
-            }
-    );
+    //            if (loginVM.IsLogin)
+    //            {
+    //                p.Show();
+    //            }
+    //            else
+    //            {
+    //                p.Close();
+    //            }
+    //        }
+    //);
             UnitCommand = new RelayCommand<object>((p) => { return true; }, (p) => { UnitWindow wd = new UnitWindow(); wd.ShowDialog(); });
             ItemCommand = new RelayCommand<object>((p) => { return true; }, (p) => { ItemWindow wd = new ItemWindow(); wd.ShowDialog(); });
             CustomerCommand = new RelayCommand<object>((p) => { return true; }, (p) => { CustomerWindow wd = new CustomerWindow(); wd.ShowDialog(); });

@@ -12,10 +12,11 @@ namespace Cafe_Management3.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class loai_kh
+    public partial class qui_doivt
     {
         public int id { get; set; }
-        public string ma_loaikh { get; set; }
-        public string ten_loaikh { get; set; }
+        public string ma_dvt { get; set; }
+        public string ma_dvt2 { get; set; }
+        public Nullable<int> sl { get; set; }
     }
 }

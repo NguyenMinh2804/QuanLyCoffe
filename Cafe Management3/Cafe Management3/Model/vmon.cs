@@ -20,6 +20,5 @@ namespace Cafe_Management3.Model
         public string ma_loaiMon { get; set; }
         public Nullable<decimal> gia { get; set; }
         public string ten_loaiMon { get; set; }
-        public virtual loai_mon Loai_Mon { get; set; }
     }
 }

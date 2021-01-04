@@ -1,0 +1,21 @@
+﻿<Window x:Class="Cafe_Management3.ChartColumn"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Cafe_Management3"
+        mc:Ignorable="d"
+        Title="2-D Column Chart" 
+        Width="1280"
+        Height="720" 
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal">
+    <Grid HorizontalAlignment="Center"
+          VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Canvas Grid.Row="1" x:Name="mainCanvas"/>
+    </Grid>
+</Window>

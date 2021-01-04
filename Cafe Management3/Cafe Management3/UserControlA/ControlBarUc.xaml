@@ -8,7 +8,7 @@
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"             
              
-             
+             Loaded="ucControlBar_Loaded"
              Name="ucControlBar"
              mc:Ignorable="d">
     <i:Interaction.Triggers>
@@ -18,7 +18,7 @@
     </i:Interaction.Triggers>
     <Grid>
         <materialDesign:ColorZone Mode="PrimaryDark" >
-            <DockPanel>
+            <DockPanel Background="#47697E">
                 <StackPanel DockPanel.Dock="Right"  Background="Transparent" Orientation="Horizontal">
                     <StackPanel.Resources>
                         <Style TargetType="Button">
@@ -44,10 +44,25 @@
                 </StackPanel>
 
                 <StackPanel DockPanel.Dock="Left" Orientation="Horizontal">
-                    <ToggleButton Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
-                    <TextBlock VerticalAlignment="Center" Margin="16 0 0 0" Text="{Binding Tag, ElementName=ucControlBar}"></TextBlock>
+                    <materialDesign:PopupBox
+      DockPanel.Dock="Right"
+      PlacementMode="BottomAndAlignRightEdges" Height="38">
+                    <ListBox SelectionChanged="list_box_SelectionChanged" x:Name="list_box">
+                        <ListBoxItem>
+                           Quản lý
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            Thông tin tài khoản
+                        </ListBoxItem>
+                        <ListBoxItem>
+                            Đăng xuất
+                        </ListBoxItem>
+                    </ListBox>
+                    </materialDesign:PopupBox>
                 </StackPanel>
             </DockPanel>
         </materialDesign:ColorZone>
+        <Grid Margin="0,0,0,-8" Height="41" VerticalAlignment="Top">
+        </Grid>
     </Grid>
 </UserControl>

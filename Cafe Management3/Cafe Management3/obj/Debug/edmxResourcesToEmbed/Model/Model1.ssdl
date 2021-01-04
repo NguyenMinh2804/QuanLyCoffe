@@ -22,18 +22,20 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_cthd" Type="char" MaxLength="8" />
-    <Property Name="ma_hoadon" Type="char" MaxLength="8" />
+    <Property Name="ma_cthd" Type="int" />
+    <Property Name="ma_hoadon" Type="char" MaxLength="50" />
     <Property Name="ma_mon" Type="char" MaxLength="8" />
     <Property Name="so_luong" Type="int" />
+    <Property Name="don_gia" Type="numeric" Precision="16" Scale="2" />
     <Property Name="thanh_tien" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="ngay_hd" Type="datetime" />
   </EntityType>
   <EntityType Name="dvt">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_dvt" Type="nvarchar" MaxLength="8" />
+    <Property Name="ma_dvt" Type="nvarchar" MaxLength="32" />
     <Property Name="ten_dvt" Type="nvarchar" MaxLength="256" />
   </EntityType>
   <EntityType Name="hoa_don">
@@ -41,10 +43,13 @@
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_hoadon" Type="char" MaxLength="8" />
-    <Property Name="ma_ban" Type="char" MaxLength="8" />
+    <Property Name="ma_hoadon" Type="char" MaxLength="50" />
     <Property Name="ma_kh" Type="char" MaxLength="8" />
     <Property Name="thanh_tien" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="giam_gia" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="thanh_toan" Type="numeric" Precision="16" Scale="2" />
+    <Property Name="ngay_hd" Type="datetime" />
+    <Property Name="status" Type="char" MaxLength="1" />
   </EntityType>
   <EntityType Name="khach_hang">
     <Key>
@@ -57,14 +62,6 @@
     <Property Name="sdt" Type="char" MaxLength="16" />
     <Property Name="email" Type="char" MaxLength="128" />
     <Property Name="ma_loaikh" Type="char" MaxLength="8" />
-  </EntityType>
-  <EntityType Name="loai_kh">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_loaikh" Type="char" MaxLength="8" />
-    <Property Name="ten_loaikh" Type="nvarchar" MaxLength="256" />
   </EntityType>
   <EntityType Name="loai_mon">
     <Key>
@@ -83,14 +80,6 @@
     <Property Name="ten_loainv" Type="nvarchar" MaxLength="256" />
     <Property Name="luong" Type="numeric" Precision="16" Scale="0" />
   </EntityType>
-  <EntityType Name="loai_vt">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_loaivt" Type="char" MaxLength="8" />
-    <Property Name="ten_loaivt" Type="nvarchar" MaxLength="256" />
-  </EntityType>
   <EntityType Name="mon">
     <Key>
       <PropertyRef Name="id" />
@@ -100,6 +89,17 @@
     <Property Name="ten_mon" Type="nvarchar" MaxLength="256" />
     <Property Name="ma_loaiMon" Type="char" MaxLength="8" />
     <Property Name="gia" Type="numeric" Precision="16" Scale="0" />
+  </EntityType>
+  <EntityType Name="nha_cc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ma_kh" Type="char" MaxLength="8" />
+    <Property Name="ten_kh" Type="nvarchar" MaxLength="256" />
+    <Property Name="dia_chi" Type="nvarchar" MaxLength="512" />
+    <Property Name="sdt" Type="char" MaxLength="16" />
+    <Property Name="email" Type="char" MaxLength="128" />
   </EntityType>
   <EntityType Name="nhan_vien">
     <Key>
@@ -114,6 +114,7 @@
     <Property Name="ma_loainv" Type="char" MaxLength="8" />
     <Property Name="he_so" Type="float" />
     <Property Name="so_cmnd" Type="char" MaxLength="16" />
+    <Property Name="status" Type="char" MaxLength="1" />
   </EntityType>
   <EntityType Name="phieu_nhap_kho">
     <Key>
@@ -139,6 +140,15 @@
     <Property Name="so_luong" Type="float" />
     <Property Name="ngay_nhap" Type="smalldatetime" />
   </EntityType>
+  <EntityType Name="qui_doivt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ma_dvt" Type="nvarchar" MaxLength="16" />
+    <Property Name="ma_dvt2" Type="nvarchar" MaxLength="16" />
+    <Property Name="sl" Type="int" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -157,8 +167,6 @@
     <Property Name="ma_vt" Type="char" MaxLength="8" />
     <Property Name="ten_vt" Type="nvarchar" MaxLength="256" />
     <Property Name="ma_dvt" Type="nvarchar" MaxLength="8" />
-    <Property Name="gia_mua" Type="numeric" Precision="16" Scale="0" />
-    <Property Name="ma_loaivt" Type="char" MaxLength="8" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -173,6 +181,20 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
     <Property Name="gia" Type="numeric" Precision="16" Scale="0" />
     <Property Name="ten_loaiMon" Type="nvarchar" MaxLength="256" />
   </EntityType>
+  <Function Name="bao_cao_ct_hd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ngay_tu" Type="char" Mode="In" />
+    <Parameter Name="ngay_den" Type="char" Mode="In" />
+  </Function>
+  <Function Name="bao_cao_hd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ngay_tu" Type="char" Mode="In" />
+    <Parameter Name="ngay_den" Type="char" Mode="In" />
+  </Function>
+  <Function Name="column_chart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nam" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fChuyenCoDauThanhKhongDau" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+    <Parameter Name="inputVar" Type="nvarchar(max)" Mode="In" />
+  </Function>
   <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -211,14 +233,14 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
     <EntitySet Name="dvt" EntityType="Self.dvt" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="hoa_don" EntityType="Self.hoa_don" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="khach_hang" EntityType="Self.khach_hang" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="loai_kh" EntityType="Self.loai_kh" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="loai_mon" EntityType="Self.loai_mon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="loai_nv" EntityType="Self.loai_nv" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="loai_vt" EntityType="Self.loai_vt" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="mon" EntityType="Self.mon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="nha_cc" EntityType="Self.nha_cc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vat_tu" EntityType="Self.vat_tu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vmon" EntityType="Self.vmon" store:Type="Views" store:Schema="dbo">

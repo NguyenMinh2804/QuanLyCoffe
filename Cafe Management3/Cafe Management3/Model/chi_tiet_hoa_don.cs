@@ -15,10 +15,12 @@ namespace Cafe_Management3.Model
     public partial class chi_tiet_hoa_don
     {
         public int id { get; set; }
-        public string ma_cthd { get; set; }
+        public Nullable<int> ma_cthd { get; set; }
         public string ma_hoadon { get; set; }
         public string ma_mon { get; set; }
         public Nullable<int> so_luong { get; set; }
+        public Nullable<decimal> don_gia { get; set; }
         public Nullable<decimal> thanh_tien { get; set; }
+        public Nullable<System.DateTime> ngay_hd { get; set; }
     }
 }

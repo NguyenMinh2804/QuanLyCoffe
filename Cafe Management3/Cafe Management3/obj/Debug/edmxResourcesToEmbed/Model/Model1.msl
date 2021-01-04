@@ -28,7 +28,9 @@
           <ScalarProperty Name="ma_hoadon" ColumnName="ma_hoadon" />
           <ScalarProperty Name="ma_mon" ColumnName="ma_mon" />
           <ScalarProperty Name="so_luong" ColumnName="so_luong" />
+          <ScalarProperty Name="don_gia" ColumnName="don_gia" />
           <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+          <ScalarProperty Name="ngay_hd" ColumnName="ngay_hd" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -46,9 +48,12 @@
         <MappingFragment StoreEntitySet="hoa_don">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="ma_hoadon" ColumnName="ma_hoadon" />
-          <ScalarProperty Name="ma_ban" ColumnName="ma_ban" />
           <ScalarProperty Name="ma_kh" ColumnName="ma_kh" />
           <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+          <ScalarProperty Name="giam_gia" ColumnName="giam_gia" />
+          <ScalarProperty Name="thanh_toan" ColumnName="thanh_toan" />
+          <ScalarProperty Name="ngay_hd" ColumnName="ngay_hd" />
+          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -62,15 +67,6 @@
           <ScalarProperty Name="sdt" ColumnName="sdt" />
           <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="ma_loaikh" ColumnName="ma_loaikh" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="loai_kh">
-      <EntityTypeMapping TypeName="quanLyCafeModel.loai_kh">
-        <MappingFragment StoreEntitySet="loai_kh">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ma_loaikh" ColumnName="ma_loaikh" />
-          <ScalarProperty Name="ten_loaikh" ColumnName="ten_loaikh" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -93,15 +89,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="loai_vt">
-      <EntityTypeMapping TypeName="quanLyCafeModel.loai_vt">
-        <MappingFragment StoreEntitySet="loai_vt">
-          <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ma_loaivt" ColumnName="ma_loaivt" />
-          <ScalarProperty Name="ten_loaivt" ColumnName="ten_loaivt" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="mon">
       <EntityTypeMapping TypeName="quanLyCafeModel.mon">
         <MappingFragment StoreEntitySet="mon">
@@ -110,6 +97,18 @@
           <ScalarProperty Name="ten_mon" ColumnName="ten_mon" />
           <ScalarProperty Name="ma_loaiMon" ColumnName="ma_loaiMon" />
           <ScalarProperty Name="gia" ColumnName="gia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="nha_cc">
+      <EntityTypeMapping TypeName="quanLyCafeModel.nha_cc">
+        <MappingFragment StoreEntitySet="nha_cc">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_kh" ColumnName="ma_kh" />
+          <ScalarProperty Name="ten_kh" ColumnName="ten_kh" />
+          <ScalarProperty Name="dia_chi" ColumnName="dia_chi" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="email" ColumnName="email" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -125,6 +124,7 @@
           <ScalarProperty Name="ma_loainv" ColumnName="ma_loainv" />
           <ScalarProperty Name="he_so" ColumnName="he_so" />
           <ScalarProperty Name="so_cmnd" ColumnName="so_cmnd" />
+          <ScalarProperty Name="status" ColumnName="status" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -154,6 +154,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="qui_doivt">
+      <EntityTypeMapping TypeName="quanLyCafeModel.qui_doivt">
+        <MappingFragment StoreEntitySet="qui_doivt">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
+          <ScalarProperty Name="ma_dvt2" ColumnName="ma_dvt2" />
+          <ScalarProperty Name="sl" ColumnName="sl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="sysdiagrams">
       <EntityTypeMapping TypeName="quanLyCafeModel.sysdiagrams">
         <MappingFragment StoreEntitySet="sysdiagrams">
@@ -172,8 +182,6 @@
           <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
           <ScalarProperty Name="ten_vt" ColumnName="ten_vt" />
           <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
-          <ScalarProperty Name="gia_mua" ColumnName="gia_mua" />
-          <ScalarProperty Name="ma_loaivt" ColumnName="ma_loaivt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -189,6 +197,9 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="bao_cao_ct_hd" FunctionName="quanLyCafeModel.Store.bao_cao_ct_hd" />
+    <FunctionImportMapping FunctionImportName="bao_cao_hd" FunctionName="quanLyCafeModel.Store.bao_cao_hd" />
+    <FunctionImportMapping FunctionImportName="column_chart" FunctionName="quanLyCafeModel.Store.column_chart" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="quanLyCafeModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="quanLyCafeModel.Store.sp_creatediagram" />
     <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="quanLyCafeModel.Store.sp_dropdiagram" />

@@ -8,30 +8,27 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         DataContext="{StaticResource loginVM}"
-     TextElement.FontWeight="Regular"
-     TextElement.FontSize="13"
-     TextOptions.TextFormattingMode="Ideal"
-     TextOptions.TextRenderingMode="Auto"
-     Background="{DynamicResource MaterialDesignPaper}"
-     FontFamily="{DynamicResource MaterialDesignFont}"
-        ResizeMode="NoResize"
-        WindowStyle="None"
-          WindowStartupLocation="CenterOwner"
+          WindowStartupLocation="CenterScreen"
         Name="loginWindow"
-        Title="Đăng nhập" Height="350" Width="525">
-    
-    <Grid>
+        Title="Đăng nhập" Height="288" Width="450"
+        Background="LightGray">
+
+    <Grid Margin="0,0,0,8">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="26*"/>
+            <ColumnDefinition Width="468*"/>
+            <ColumnDefinition Width="15*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <uc:ControlBarUc Tag="{Binding Title, ElementName=loginWindow}"></uc:ControlBarUc>
+        <Grid Grid.Row="0" Grid.ColumnSpan="4" Margin="0,0,0,319" Grid.RowSpan="2">
         </Grid>
-        <materialDesign:Card Grid.Row="1" Width="400" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1" Margin="8,0,0,0">
-            <Grid>
+        <materialDesign:Card  Grid.Row="1" Width="418" Height="225" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="4,10,0,14" Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid Margin="15,15,15,10">
                 <Grid.Resources>
                     <Style TargetType="Grid">
                         <Setter Property="Margin" Value="15 15 15 0">
@@ -61,19 +58,19 @@
                         </i:Interaction.Triggers>
                     </PasswordBox>
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="2" Margin="15,15,15,-10" Height="60" VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0"
+                    <Button  Background="DarkGray" Grid.Column="0"
                         Style="{StaticResource MaterialDesignRaisedLightButton}"
-                        Width="100"
+                        Width="110"
                         Command="{Binding LoginCommand}"
                         CommandParameter="{Binding ElementName=loginWindow}"
                         ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Đăng nhập">
                     </Button>
-                    <Button Grid.Column="1"
+                    <Button Background="DarkGray" Grid.Column="1"
                         Command="{Binding CloseCommand}"
                         CommandParameter="{Binding ElementName=loginWindow}"
                         Style="{StaticResource MaterialDesignRaisedLightButton}"
