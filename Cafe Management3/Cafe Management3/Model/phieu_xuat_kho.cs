@@ -15,10 +15,9 @@ namespace Cafe_Management3.Model
     public partial class phieu_xuat_kho
     {
         public int id { get; set; }
-        public string ma_phieu { get; set; }
-        public Nullable<int> stt_rect { get; set; }
         public string ma_vt { get; set; }
         public Nullable<double> so_luong { get; set; }
         public Nullable<System.DateTime> ngay_nhap { get; set; }
+        public string dvt { get; set; }
     }
 }

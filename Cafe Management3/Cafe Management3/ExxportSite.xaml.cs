@@ -41,9 +41,9 @@ namespace Cafe_Management3
             {
                 id =  Int32.Parse(((hoa_don.Columns[1].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
                 ngay.Text = (((hoa_don.Columns[2].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
-                vatu.Text = (((hoa_don.Columns[3].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
-                dvt.Text = (((hoa_don.Columns[4].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
-                sl.Text = (((hoa_don.Columns[5].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
+                vatu.Text = (((hoa_don.Columns[4].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
+                dvt.Text = (((hoa_don.Columns[5].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
+                sl.Text = (((hoa_don.Columns[6].GetCellContent(hoa_don.Items[a]) as TextBlock).Text));
             }
         }
 
@@ -77,7 +77,7 @@ namespace Cafe_Management3
         {
             var context = new quanLyCafeEntities();
             var table = new DataTable();
-            string query = String.Format("select ROW_NUMBER() over(order by ngay_nhap) as Stt,CONVERT(char(10),ngay_nhap,103) as 'Ngày xuất', rtrim(a.ma_vt) as 'Mã vật tư',b.ten_vt as N'Tên vật tư', dvt as 'Đơn vị tính', Format(so_luong, '#,##0') as N'Số lượng'  from phieu_xuat_kho a left join vat_tu b on a.ma_vt= b.ma_vt");
+            string query = String.Format("select ROW_NUMBER() over(order by ngay_nhap) as Stt,a.id as ID, CONVERT(char(10),ngay_nhap,103) as 'Ngày xuất', rtrim(a.ma_vt) as 'Mã vật tư',b.ten_vt as N'Tên vật tư', dvt as 'Đơn vị tính', Format(so_luong, '#,##0') as N'Số lượng'  from phieu_xuat_kho a left join vat_tu b on a.ma_vt= b.ma_vt");
             SqlConnection connection = new SqlConnection(context.Database.Connection.ConnectionString);
             using (var da = new SqlDataAdapter(query, connection))
             {
@@ -85,8 +85,9 @@ namespace Cafe_Management3
             }
             hoa_don.DataContext = table.DefaultView;
             hoa_don.SelectedIndex = -1;
-            vatu.SelectedIndex = -1;
             sl.Text = "";
+            vatu.SelectedIndex = -1;
+            dvt.SelectedIndex = -1;
         }
 
 
@@ -99,7 +100,7 @@ namespace Cafe_Management3
             string date = ngay.SelectedDate.Value.ToString("MM/dd/yyy");
             using (var ctx = new quanLyCafeEntities())
             {
-                string query = string.Format("insert into phieu_xuat_kho values('{0}',{1},'{2}','{3}')",vatu.SelectedValue,float.Parse(sl.Text),date, dvt.SelectedValue);
+                string query = string.Format("insert into phieu_xuat_kho values('{0}',{1},'{2}',N'{3}')",vatu.SelectedValue,float.Parse(sl.Text),date, dvt.SelectedValue);
                 int noOfRowUpdated = ctx.Database.ExecuteSqlCommand(query);
             }
             load_ds();
@@ -114,7 +115,7 @@ namespace Cafe_Management3
             string date = ngay.SelectedDate.Value.ToString("MM/dd/yyy");
             using (var ctx = new quanLyCafeEntities())
             {
-                string query = string.Format("update phieu_xuat_kho set ngay_nhap = '{0}', ma_vt = '{1}', so_luong = {2}, ma_dvt = {3} where id = {4}", date, vatu.SelectedValue, float.Parse(sl.Text),dvt.SelectedValue,id);
+                string query = string.Format("update phieu_xuat_kho set ngay_nhap = '{0}', ma_vt = '{1}', so_luong = {2}, dvt = N'{3}' where id = {4}", date, vatu.SelectedValue, float.Parse(sl.Text),dvt.SelectedValue,id);
                 int noOfRowUpdated = ctx.Database.ExecuteSqlCommand(query);
             }
             load_ds();

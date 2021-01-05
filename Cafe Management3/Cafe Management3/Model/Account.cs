@@ -14,9 +14,9 @@ namespace Cafe_Management3.Model
     
     public partial class Account
     {
-        public int id { get; set; }
         public string tai_khoan { get; set; }
         public string password { get; set; }
         public string loai_tk { get; set; }
+        public string displayname { get; set; }
     }
 }

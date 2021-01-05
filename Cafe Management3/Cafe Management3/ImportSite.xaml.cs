@@ -147,7 +147,7 @@ namespace Cafe_Management3
             string date = ngay.SelectedDate.Value.ToString("MM/dd/yyy");
             using (var ctx = new quanLyCafeEntities())
             {
-                string query = string.Format("update phieu_nhap_kho set ngay_nhap = '{0}', ma_ncc = '{1}', ma_vt = '{2}', so_luong = {3}, don_gia = {4}, thanh_tien = {5}, ma_dvt = {7} where id = {6}", date, ncc.SelectedValue, vatu.SelectedValue, float.Parse(sl.Text), decimal.Parse(gia.Text), decimal.Parse(tien.Text), id, dvt.SelectedValue);
+                string query = string.Format("update phieu_nhap_kho set ngay_nhap = '{0}', ma_ncc = '{1}', ma_vt = '{2}', so_luong = {3}, don_gia = {4}, thanh_tien = {5}, ma_dvt = N'{7}' where id = {6}", date, ncc.SelectedValue, vatu.SelectedValue, float.Parse(sl.Text), decimal.Parse(gia.Text), decimal.Parse(tien.Text), id, dvt.SelectedValue);
                 int noOfRowUpdated = ctx.Database.ExecuteSqlCommand(query);
             }
             load_ds();

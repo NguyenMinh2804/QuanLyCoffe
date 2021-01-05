@@ -29,9 +29,9 @@ namespace Cafe_Management3.UserControlA
         }
         private void list_box_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            MainWindow mw = new MainWindow();
-            OrderWindow or = new OrderWindow(); 
             Login log = new Login();
+            //int a = Int32.Parse(((OrderWindow)Application.Current.).tk.Content.ToString());
+            MainWindow mw = new MainWindow();
             if (list_box.SelectedIndex == 0 )
             {
                 if (mw.IsActive == false)
@@ -41,8 +41,8 @@ namespace Cafe_Management3.UserControlA
             }
             if (list_box.SelectedIndex == 1)
             {
-               mw.Show();
-
+                Acc ac = new Acc();
+                ac.Show();
             }
             if (list_box.SelectedIndex == 2)
             {
@@ -50,7 +50,7 @@ namespace Cafe_Management3.UserControlA
                 {
                     if (window.Name != "loginWindow")
                     {
-                        window.Hide();
+                        window.Close();
                     }
                 }
                 log.Show();
@@ -60,13 +60,13 @@ namespace Cafe_Management3.UserControlA
 
         private void ucControlBar_Loaded(object sender, RoutedEventArgs e)
         {
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window.Name == "window" || window.Name == "MainWindow2")
-                {
-                    list_box.Visibility = Visibility.Collapsed;
-                }
-            }
+            //foreach (Window window in Application.Current.Windows)
+            //{
+            //    if (window.Name == "window" || window.Name == "MainWindow2")
+            //    {
+            //        list_box.Visibility = Visibility.Collapsed;
+            //    }
+            //}
         }
     }
 }

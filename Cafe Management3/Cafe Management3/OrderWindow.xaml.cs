@@ -369,6 +369,11 @@ namespace Cafe_Management3
                 }
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            load_listFood("");
+        }
     }
        
 }

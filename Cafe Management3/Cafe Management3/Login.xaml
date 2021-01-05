@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        DataContext="{StaticResource loginVM}"
+
           WindowStartupLocation="CenterScreen"
         Name="loginWindow"
         Title="Đăng nhập" Height="288" Width="450"
@@ -41,13 +41,13 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <TextBox
+                    <TextBox x:Name="tk"
   Text="{Binding UserName}"
   materialDesign:HintAssist.Hint="Tên đăng nhập"
   Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                 </Grid>
                 <Grid Grid.Row="1">
-                    <PasswordBox x:Name="FloatingPasswordBox"
+                    <PasswordBox x:Name="mk"
                                  materialDesign:HintAssist.Hint="Mật khẩu"
                                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" >
                         <i:Interaction.Triggers>
@@ -68,7 +68,7 @@
                         Width="110"
                         Command="{Binding LoginCommand}"
                         CommandParameter="{Binding ElementName=loginWindow}"
-                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Đăng nhập">
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Đăng nhập" Click="Button_Click">
                     </Button>
                     <Button Background="DarkGray" Grid.Column="1"
                         Command="{Binding CloseCommand}"

@@ -82,38 +82,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Acc.xaml.cs">
+      <DependentUpon>Acc.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AccountWindow.xaml.cs">
       <DependentUpon>AccountWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Baocaoctdoanhthu.xaml.cs">
       <DependentUpon>Baocaoctdoanhthu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ChartColumn.xaml.cs">
-      <DependentUpon>ChartColumn.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ExxportSite.xaml.cs">
-      <DependentUpon>ExxportSite.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ImportSite.xaml.cs">
-      <DependentUpon>ImportSite.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="cthd.xaml.cs">
-      <DependentUpon>cthd.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerWindow.xaml.cs">
-      <DependentUpon>CustomerWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Baocaodoanhthu.xaml.cs">
-      <DependentUpon>Baocaodoanhthu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ConvertUnit.xaml.cs">
-      <DependentUpon>ConvertUnit.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ItemWindow.xaml.cs">
-      <DependentUpon>ItemWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="KindStaffWindow.xaml.cs">
-      <DependentUpon>KindStaffWindow.xaml</DependentUpon>
+    <Compile Include="ExportSiteeReport.xaml.cs">
+      <DependentUpon>ExportSiteeReport.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\Account.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -163,6 +142,9 @@
     <Compile Include="Model\nha_cc.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\phan_quyen.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\phieu_nhap_kho.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -186,6 +168,42 @@
     </Compile>
     <Compile Include="Model\vmon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PhanQuyen.xaml.cs">
+      <DependentUpon>PhanQuyen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSite.xaml.cs">
+      <DependentUpon>ReportSite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportSiteeReport.xaml.cs">
+      <DependentUpon>ImportSiteeReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChartColumn.xaml.cs">
+      <DependentUpon>ChartColumn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExxportSite.xaml.cs">
+      <DependentUpon>ExxportSite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ImportSite.xaml.cs">
+      <DependentUpon>ImportSite.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cthd.xaml.cs">
+      <DependentUpon>cthd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerWindow.xaml.cs">
+      <DependentUpon>CustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Baocaodoanhthu.xaml.cs">
+      <DependentUpon>Baocaodoanhthu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertUnit.xaml.cs">
+      <DependentUpon>ConvertUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ItemWindow.xaml.cs">
+      <DependentUpon>ItemWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="KindStaffWindow.xaml.cs">
+      <DependentUpon>KindStaffWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Supplier.xaml.cs">
       <DependentUpon>Supplier.xaml</DependentUpon>
@@ -213,6 +231,7 @@
       <DependentUpon>ControlBarUc.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Class1.cs" />
     <Compile Include="ViewModel\ControlBarViewModel.cs" />
     <Compile Include="ViewModel\MonViewModel.cs" />
     <Compile Include="ViewModel\LoaiMonViewModel.cs" />
@@ -224,11 +243,31 @@
     <Compile Include="Window1.xaml.cs">
       <DependentUpon>Window1.xaml</DependentUpon>
     </Compile>
+    <Page Include="Acc.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AccountWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Baocaoctdoanhthu.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ExportSiteeReport.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PhanQuyen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ReportSite.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ImportSiteeReport.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

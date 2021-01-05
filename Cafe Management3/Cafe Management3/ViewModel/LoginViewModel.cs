@@ -37,7 +37,6 @@ namespace Cafe_Management3.ViewModel
         {
             if (p == null)
                 return;
-
             /*
              admin
              admin

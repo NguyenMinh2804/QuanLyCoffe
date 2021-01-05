@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:Cafe_Management3"
         xmlns:uc="clr-namespace:Cafe_Management3.UserControlA"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        DataContext="{StaticResource OderVM}"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -38,7 +37,7 @@
         <Grid Grid.Row="0">
             <uc:ControlBarUc Tag="{Binding Title, ElementName=orderwindow}"></uc:ControlBarUc>
         </Grid>
-        <TabControl x:Name="tabcontrol" SelectionChanged="TabControl_SelectionChanged" Margin="0" Padding="0,0,0,0" Grid.Row="1" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto">
+        <TabControl x:Name="tabcontrol" SelectionChanged="TabControl_SelectionChanged" Padding="0,0,0,0" Grid.Row="1" HorizontalAlignment="Left" Height="auto" VerticalAlignment="Top" Width="auto">
             <TabItem Header="Order" >
                 <Grid>
 
@@ -57,10 +56,15 @@
                                 <ColumnDefinition Width="24*"/>
                                 <ColumnDefinition Width="602*"/>
                             </Grid.ColumnDefinitions>
-                            <ComboBox Name="cb_mon" Grid.Row="0" Margin="10,15,240,15" TextBoxBase.TextChanged="ComboBox_TextChanged" materialDesign:HintAssist.Hint="Tìm kiếm món" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Grid.ColumnSpan="3"/>
+                            <ComboBox Name="cb_mon" Grid.Row="0" Margin="10,15,0,15" TextBoxBase.TextChanged="ComboBox_TextChanged" materialDesign:HintAssist.Hint="Tìm kiếm món" IsEditable="True" Style="{StaticResource MaterialDesignFloatingHintComboBox}" Grid.ColumnSpan="3" HorizontalAlignment="Left" Width="332"/>
+                            <Button BorderBrush="Black" Click="Button_Click_4" FontSize="15" Content="Refesh" Foreground="White" Background="Green" Grid.Row="0" Grid.Column="2" Margin="295,23,0,0" HorizontalAlignment="Left" Width="104" RenderTransformOrigin="0.49,-0.031" VerticalAlignment="Top"/>
                         </Grid>
                         <Grid Grid.Row="1">
-                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="87*"/>
+                                <ColumnDefinition Width="47*"/>
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.ColumnSpan="2">
                                 <WrapPanel Name="x" Orientation="Horizontal">
                                 </WrapPanel>
                             </ScrollViewer>
@@ -165,16 +169,16 @@
                 </Grid>
             </TabItem>
             <TabItem  Header="Hóa đơn chưa hoàn thành">
-                    <Grid>
-                        <materialDesign:Card Margin="5" VerticalAlignment="Stretch">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                <DataGrid IsReadOnly="True" SelectionChanged="hoa_don_SelectionChanged" ItemsSource="{Binding}" Height="auto" x:Name="hoa_don" Width="800">
-                                    <DataGrid.Columns>
-                                    </DataGrid.Columns>
-                                </DataGrid>
-                            </ScrollViewer>
-                        </materialDesign:Card>
-                    </Grid>
+                <Grid>
+                    <materialDesign:Card Margin="5" VerticalAlignment="Stretch">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <DataGrid IsReadOnly="True" SelectionChanged="hoa_don_SelectionChanged" ItemsSource="{Binding}" Height="auto" x:Name="hoa_don" Width="800">
+                                <DataGrid.Columns>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </ScrollViewer>
+                    </materialDesign:Card>
+                </Grid>
             </TabItem>
         </TabControl>
     </Grid>

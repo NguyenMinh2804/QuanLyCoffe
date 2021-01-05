@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5a834d77ce32420fbda1ec17e62c7919" Name="Diagram1">
+      <Diagram DiagramId="0a7cc8d52f6649eaa2264c961798d3fc" Name="Diagram1">
         <EntityTypeShape EntityType="quanLyCafeModel.Account" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="quanLyCafeModel.ban" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="quanLyCafeModel.chi_tiet_hoa_don" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
@@ -16,12 +16,13 @@
         <EntityTypeShape EntityType="quanLyCafeModel.mon" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="quanLyCafeModel.nha_cc" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="quanLyCafeModel.nhan_vien" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="quanLyCafeModel.phieu_nhap_kho" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="quanLyCafeModel.phieu_xuat_kho" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="quanLyCafeModel.qui_doivt" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="quanLyCafeModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="quanLyCafeModel.vat_tu" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="quanLyCafeModel.vmon" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.phan_quyen" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.phieu_nhap_kho" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.phieu_xuat_kho" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.qui_doivt" Width="1.5" PointX="4.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.sysdiagrams" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.vat_tu" Width="1.5" PointX="10.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="quanLyCafeModel.vmon" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

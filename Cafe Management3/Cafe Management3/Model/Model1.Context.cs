@@ -38,6 +38,7 @@ namespace Cafe_Management3.Model
         public virtual DbSet<mon> mon { get; set; }
         public virtual DbSet<nha_cc> nha_cc { get; set; }
         public virtual DbSet<nhan_vien> nhan_vien { get; set; }
+        public virtual DbSet<phan_quyen> phan_quyen { get; set; }
         public virtual DbSet<phieu_nhap_kho> phieu_nhap_kho { get; set; }
         public virtual DbSet<phieu_xuat_kho> phieu_xuat_kho { get; set; }
         public virtual DbSet<qui_doivt> qui_doivt { get; set; }
@@ -69,6 +70,45 @@ namespace Cafe_Management3.Model
                 new ObjectParameter("ngay_den", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("bao_cao_hd", ngay_tuParameter, ngay_denParameter);
+        }
+    
+        public virtual int bao_cao_nhap_kho(string ma_vt, string ngay_tu)
+        {
+            var ma_vtParameter = ma_vt != null ?
+                new ObjectParameter("ma_vt", ma_vt) :
+                new ObjectParameter("ma_vt", typeof(string));
+    
+            var ngay_tuParameter = ngay_tu != null ?
+                new ObjectParameter("ngay_tu", ngay_tu) :
+                new ObjectParameter("ngay_tu", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("bao_cao_nhap_kho", ma_vtParameter, ngay_tuParameter);
+        }
+    
+        public virtual int bao_cao_ton_kho(string ma_vt, string ngay_tu)
+        {
+            var ma_vtParameter = ma_vt != null ?
+                new ObjectParameter("ma_vt", ma_vt) :
+                new ObjectParameter("ma_vt", typeof(string));
+    
+            var ngay_tuParameter = ngay_tu != null ?
+                new ObjectParameter("ngay_tu", ngay_tu) :
+                new ObjectParameter("ngay_tu", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("bao_cao_ton_kho", ma_vtParameter, ngay_tuParameter);
+        }
+    
+        public virtual int bao_cao_xuat_kho(string ma_vt, string ngay_tu)
+        {
+            var ma_vtParameter = ma_vt != null ?
+                new ObjectParameter("ma_vt", ma_vt) :
+                new ObjectParameter("ma_vt", typeof(string));
+    
+            var ngay_tuParameter = ngay_tu != null ?
+                new ObjectParameter("ngay_tu", ngay_tu) :
+                new ObjectParameter("ngay_tu", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("bao_cao_xuat_kho", ma_vtParameter, ngay_tuParameter);
         }
     
         public virtual int column_chart(Nullable<int> nam)

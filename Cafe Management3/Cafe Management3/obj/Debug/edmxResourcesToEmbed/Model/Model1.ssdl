@@ -2,12 +2,12 @@
 <Schema Namespace="quanLyCafeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Account">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="tai_khoan" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tai_khoan" Type="char" MaxLength="16" />
+    <Property Name="tai_khoan" Type="char" MaxLength="16" Nullable="false" />
     <Property Name="password" Type="char" MaxLength="32" />
     <Property Name="loai_tk" Type="char" MaxLength="1" />
+    <Property Name="displayname" Type="nvarchar" MaxLength="128" />
   </EntityType>
   <EntityType Name="ban">
     <Key>
@@ -116,29 +116,51 @@
     <Property Name="so_cmnd" Type="char" MaxLength="16" />
     <Property Name="status" Type="char" MaxLength="1" />
   </EntityType>
+  <EntityType Name="phan_quyen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tai_khoan" Type="char" MaxLength="16" />
+    <Property Name="id1" Type="bit" />
+    <Property Name="id2" Type="bit" />
+    <Property Name="id3" Type="bit" />
+    <Property Name="id4" Type="bit" />
+    <Property Name="id5" Type="bit" />
+    <Property Name="id6" Type="bit" />
+    <Property Name="id7" Type="bit" />
+    <Property Name="id8" Type="bit" />
+    <Property Name="id9" Type="bit" />
+    <Property Name="id10" Type="bit" />
+    <Property Name="id11" Type="bit" />
+    <Property Name="id12" Type="bit" />
+    <Property Name="id13" Type="bit" />
+    <Property Name="id14" Type="bit" />
+    <Property Name="id15" Type="bit" />
+    <Property Name="id16" Type="bit" />
+  </EntityType>
   <EntityType Name="phieu_nhap_kho">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_phieu" Type="char" MaxLength="8" />
-    <Property Name="stt_rect" Type="int" />
     <Property Name="ma_vt" Type="char" MaxLength="8" />
     <Property Name="so_luong" Type="float" />
-    <Property Name="ngay_nhap" Type="smalldatetime" />
+    <Property Name="ngay_nhap" Type="datetime" />
     <Property Name="don_gia" Type="numeric" Precision="16" Scale="0" />
     <Property Name="thanh_tien" Type="numeric" Precision="16" Scale="0" />
+    <Property Name="ma_ncc" Type="char" MaxLength="8" />
+    <Property Name="ma_dvt" Type="nvarchar" MaxLength="32" />
   </EntityType>
   <EntityType Name="phieu_xuat_kho">
     <Key>
       <PropertyRef Name="id" />
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_phieu" Type="char" MaxLength="8" />
-    <Property Name="stt_rect" Type="int" />
     <Property Name="ma_vt" Type="char" MaxLength="8" />
     <Property Name="so_luong" Type="float" />
     <Property Name="ngay_nhap" Type="smalldatetime" />
+    <Property Name="dvt" Type="nvarchar" MaxLength="32" />
   </EntityType>
   <EntityType Name="qui_doivt">
     <Key>
@@ -189,6 +211,18 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
     <Parameter Name="ngay_tu" Type="char" Mode="In" />
     <Parameter Name="ngay_den" Type="char" Mode="In" />
   </Function>
+  <Function Name="bao_cao_nhap_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma_vt" Type="char" Mode="In" />
+    <Parameter Name="ngay_tu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="bao_cao_ton_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma_vt" Type="char" Mode="In" />
+    <Parameter Name="ngay_tu" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="bao_cao_xuat_kho" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ma_vt" Type="char" Mode="In" />
+    <Parameter Name="ngay_tu" Type="nvarchar" Mode="In" />
+  </Function>
   <Function Name="column_chart" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="nam" Type="int" Mode="In" />
   </Function>
@@ -238,6 +272,7 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
     <EntitySet Name="mon" EntityType="Self.mon" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nha_cc" EntityType="Self.nha_cc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="phan_quyen" EntityType="Self.phan_quyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" Schema="dbo" store:Type="Tables" />

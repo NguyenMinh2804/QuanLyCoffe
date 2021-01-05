@@ -4,10 +4,10 @@
     <EntitySetMapping Name="Account">
       <EntityTypeMapping TypeName="quanLyCafeModel.Account">
         <MappingFragment StoreEntitySet="Account">
-          <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="tai_khoan" ColumnName="tai_khoan" />
           <ScalarProperty Name="password" ColumnName="password" />
           <ScalarProperty Name="loai_tk" ColumnName="loai_tk" />
+          <ScalarProperty Name="displayname" ColumnName="displayname" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -128,17 +128,41 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="phan_quyen">
+      <EntityTypeMapping TypeName="quanLyCafeModel.phan_quyen">
+        <MappingFragment StoreEntitySet="phan_quyen">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tai_khoan" ColumnName="tai_khoan" />
+          <ScalarProperty Name="id1" ColumnName="id1" />
+          <ScalarProperty Name="id2" ColumnName="id2" />
+          <ScalarProperty Name="id3" ColumnName="id3" />
+          <ScalarProperty Name="id4" ColumnName="id4" />
+          <ScalarProperty Name="id5" ColumnName="id5" />
+          <ScalarProperty Name="id6" ColumnName="id6" />
+          <ScalarProperty Name="id7" ColumnName="id7" />
+          <ScalarProperty Name="id8" ColumnName="id8" />
+          <ScalarProperty Name="id9" ColumnName="id9" />
+          <ScalarProperty Name="id10" ColumnName="id10" />
+          <ScalarProperty Name="id11" ColumnName="id11" />
+          <ScalarProperty Name="id12" ColumnName="id12" />
+          <ScalarProperty Name="id13" ColumnName="id13" />
+          <ScalarProperty Name="id14" ColumnName="id14" />
+          <ScalarProperty Name="id15" ColumnName="id15" />
+          <ScalarProperty Name="id16" ColumnName="id16" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="phieu_nhap_kho">
       <EntityTypeMapping TypeName="quanLyCafeModel.phieu_nhap_kho">
         <MappingFragment StoreEntitySet="phieu_nhap_kho">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ma_phieu" ColumnName="ma_phieu" />
-          <ScalarProperty Name="stt_rect" ColumnName="stt_rect" />
           <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
           <ScalarProperty Name="so_luong" ColumnName="so_luong" />
           <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
           <ScalarProperty Name="don_gia" ColumnName="don_gia" />
           <ScalarProperty Name="thanh_tien" ColumnName="thanh_tien" />
+          <ScalarProperty Name="ma_ncc" ColumnName="ma_ncc" />
+          <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -146,11 +170,10 @@
       <EntityTypeMapping TypeName="quanLyCafeModel.phieu_xuat_kho">
         <MappingFragment StoreEntitySet="phieu_xuat_kho">
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="ma_phieu" ColumnName="ma_phieu" />
-          <ScalarProperty Name="stt_rect" ColumnName="stt_rect" />
           <ScalarProperty Name="ma_vt" ColumnName="ma_vt" />
           <ScalarProperty Name="so_luong" ColumnName="so_luong" />
           <ScalarProperty Name="ngay_nhap" ColumnName="ngay_nhap" />
+          <ScalarProperty Name="dvt" ColumnName="dvt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -199,6 +222,9 @@
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="bao_cao_ct_hd" FunctionName="quanLyCafeModel.Store.bao_cao_ct_hd" />
     <FunctionImportMapping FunctionImportName="bao_cao_hd" FunctionName="quanLyCafeModel.Store.bao_cao_hd" />
+    <FunctionImportMapping FunctionImportName="bao_cao_nhap_kho" FunctionName="quanLyCafeModel.Store.bao_cao_nhap_kho" />
+    <FunctionImportMapping FunctionImportName="bao_cao_ton_kho" FunctionName="quanLyCafeModel.Store.bao_cao_ton_kho" />
+    <FunctionImportMapping FunctionImportName="bao_cao_xuat_kho" FunctionName="quanLyCafeModel.Store.bao_cao_xuat_kho" />
     <FunctionImportMapping FunctionImportName="column_chart" FunctionName="quanLyCafeModel.Store.column_chart" />
     <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="quanLyCafeModel.Store.sp_alterdiagram" />
     <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="quanLyCafeModel.Store.sp_creatediagram" />

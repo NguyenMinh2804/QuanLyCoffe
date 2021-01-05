@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Cafe_Management3.Model;
+using Cafe_Management3.ViewModel;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,8 +31,6 @@ namespace Cafe_Management3
 
         private void MainWindow2_Closed(object sender, EventArgs e)
         {
-            OrderWindow main = (OrderWindow)Application.Current.MainWindow;
-            main.load_listFood("");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -83,6 +85,88 @@ namespace Cafe_Management3
         {
             ExxportSite ex = new ExxportSite();
             ex.Show();
+        }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            ImportSiteeReport irp = new ImportSiteeReport();
+            irp.Show();
+        }
+
+        private void Button_Click_10(object sender, RoutedEventArgs e)
+        {
+            ExportSiteeReport irp = new ExportSiteeReport();
+            irp.Show();
+        }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            ReportSite reportSite = new ReportSite();
+            reportSite.Show();
+        }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void MainWindow2_Loaded(object sender, RoutedEventArgs e)
+        {
+            c1a.IsEnabled =false;
+            c2a.IsEnabled = false;
+            c3a.IsEnabled = false;
+            c4.IsEnabled = false;
+            c5.IsEnabled = false;
+            c6.IsEnabled = false;
+            c7.IsEnabled = false;
+            c8.IsEnabled = false;
+            c9.IsEnabled = false;
+            c10.IsEnabled = false;
+            c11.IsEnabled = false;
+            c12.IsEnabled = false;
+            c13.IsEnabled = false;
+            c14.IsEnabled = false;
+            c15.IsEnabled = false;
+            c16.IsEnabled = false;
+            if (Class1.MyProperty !=1)
+            {
+                x.IsEnabled = false;
+                y.IsEnabled = false;
+            }
+            DataTable dt = new DataTable();
+            var context = new quanLyCafeEntities();
+            string query = String.Format("Select * from phan_quyen where rtrim(tai_khoan) = rtrim('{0}')",Class1.tk);
+            SqlConnection connection = new SqlConnection(context.Database.Connection.ConnectionString);
+            using (var da = new SqlDataAdapter(query, connection))
+            {
+                da.Fill(dt);
+            }
+ 
+            foreach (DataRow dr in dt.Rows)
+            {
+                c1a.IsEnabled  = bool.Parse(dr["id1"].ToString());
+                c2a.IsEnabled = bool.Parse(dr["id2"].ToString());
+                c3a.IsEnabled = bool.Parse(dr["id3"].ToString());
+                c4.IsEnabled = bool.Parse(dr["id4"].ToString());
+                c5.IsEnabled = bool.Parse(dr["id5"].ToString());
+                c6.IsEnabled = bool.Parse(dr["id6"].ToString());
+                c7.IsEnabled = bool.Parse(dr["id7"].ToString());
+                c8.IsEnabled = bool.Parse(dr["id8"].ToString());
+                c9.IsEnabled = bool.Parse(dr["id9"].ToString());
+                c10.IsEnabled = bool.Parse(dr["id10"].ToString());
+                c11.IsEnabled = bool.Parse(dr["id11"].ToString());
+                c12.IsEnabled = bool.Parse(dr["id12"].ToString());
+                c13.IsEnabled = bool.Parse(dr["id13"].ToString());
+                c14.IsEnabled = bool.Parse(dr["id14"].ToString());
+                c15.IsEnabled = bool.Parse(dr["id15"].ToString());
+                c16.IsEnabled = bool.Parse(dr["id16"].ToString());
+            }
+        }
+
+        private void y_Click(object sender, RoutedEventArgs e)
+        {
+            PhanQuyen a = new PhanQuyen();
+            a.Show();
         }
     }
 }

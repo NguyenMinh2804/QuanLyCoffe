@@ -72,3 +72,13 @@ C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ImportSi
 C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ImportSite.baml
 C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ExxportSite.g.cs
 C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ExxportSite.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ImportSiteeReport.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ImportSiteeReport.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ExportSiteeReport.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ExportSiteeReport.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ReportSite.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\ReportSite.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\PhanQuyen.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\PhanQuyen.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Acc.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Debug\Acc.baml
