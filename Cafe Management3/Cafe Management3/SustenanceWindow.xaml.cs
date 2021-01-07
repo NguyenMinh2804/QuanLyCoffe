@@ -24,5 +24,13 @@ namespace Cafe_Management3
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(cbb.SelectedIndex == -1)
+            {
+                MessageBox.Show("Chưa chọn loại món");
+            }    
+        }
     }
 }

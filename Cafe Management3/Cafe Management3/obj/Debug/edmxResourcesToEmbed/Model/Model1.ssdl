@@ -9,14 +9,6 @@
     <Property Name="loai_tk" Type="char" MaxLength="1" />
     <Property Name="displayname" Type="nvarchar" MaxLength="128" />
   </EntityType>
-  <EntityType Name="ban">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ma_ban" Type="char" MaxLength="8" />
-    <Property Name="ten_ban" Type="nvarchar" MaxLength="128" />
-  </EntityType>
   <EntityType Name="chi_tiet_hoa_don">
     <Key>
       <PropertyRef Name="id" />
@@ -120,8 +112,8 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="tai_khoan" Type="char" MaxLength="16" />
+    <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="tai_khoan" MaxLength="16" Type="char" />
     <Property Name="id1" Type="bit" />
     <Property Name="id2" Type="bit" />
     <Property Name="id3" Type="bit" />
@@ -171,16 +163,6 @@
     <Property Name="ma_dvt2" Type="nvarchar" MaxLength="16" />
     <Property Name="sl" Type="int" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="vat_tu">
     <Key>
       <PropertyRef Name="id" />
@@ -196,12 +178,12 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="int" Nullable="false" />
-    <Property Name="ma_mon" Type="char" MaxLength="8" />
-    <Property Name="ten_mon" Type="nvarchar" MaxLength="256" />
-    <Property Name="ma_loaiMon" Type="char" MaxLength="8" />
-    <Property Name="gia" Type="numeric" Precision="16" Scale="0" />
-    <Property Name="ten_loaiMon" Type="nvarchar" MaxLength="256" />
+    <Property Name="id" Nullable="false" Type="int" />
+    <Property Name="ma_mon" MaxLength="8" Type="char" />
+    <Property Name="ten_mon" MaxLength="256" Type="nvarchar" />
+    <Property Name="ma_loaiMon" MaxLength="8" Type="char" />
+    <Property Name="gia" Precision="16" Scale="0" Type="numeric" />
+    <Property Name="ten_loaiMon" MaxLength="256" Type="nvarchar" />
   </EntityType>
   <Function Name="bao_cao_ct_hd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="ngay_tu" Type="char" Mode="In" />
@@ -262,7 +244,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="quanLyCafeModelStoreContainer">
     <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ban" EntityType="Self.ban" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="dvt" EntityType="Self.dvt" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="hoa_don" EntityType="Self.hoa_don" Schema="dbo" store:Type="Tables" />
@@ -276,7 +257,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
     <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vat_tu" EntityType="Self.vat_tu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="vmon" EntityType="Self.vmon" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

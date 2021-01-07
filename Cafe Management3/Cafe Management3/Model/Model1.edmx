@@ -14,14 +14,6 @@
           <Property Name="loai_tk" Type="char" MaxLength="1" />
           <Property Name="displayname" Type="nvarchar" MaxLength="128" />
         </EntityType>
-        <EntityType Name="ban">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ma_ban" Type="char" MaxLength="8" />
-          <Property Name="ten_ban" Type="nvarchar" MaxLength="128" />
-        </EntityType>
         <EntityType Name="chi_tiet_hoa_don">
           <Key>
             <PropertyRef Name="id" />
@@ -125,8 +117,8 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="tai_khoan" Type="char" MaxLength="16" />
+          <Property Name="id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="tai_khoan" MaxLength="16" Type="char" />
           <Property Name="id1" Type="bit" />
           <Property Name="id2" Type="bit" />
           <Property Name="id3" Type="bit" />
@@ -176,16 +168,6 @@
           <Property Name="ma_dvt2" Type="nvarchar" MaxLength="16" />
           <Property Name="sl" Type="int" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="vat_tu">
           <Key>
             <PropertyRef Name="id" />
@@ -201,12 +183,12 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="ma_mon" Type="char" MaxLength="8" />
-          <Property Name="ten_mon" Type="nvarchar" MaxLength="256" />
-          <Property Name="ma_loaiMon" Type="char" MaxLength="8" />
-          <Property Name="gia" Type="numeric" Precision="16" Scale="0" />
-          <Property Name="ten_loaiMon" Type="nvarchar" MaxLength="256" />
+          <Property Name="id" Nullable="false" Type="int" />
+          <Property Name="ma_mon" MaxLength="8" Type="char" />
+          <Property Name="ten_mon" MaxLength="256" Type="nvarchar" />
+          <Property Name="ma_loaiMon" MaxLength="8" Type="char" />
+          <Property Name="gia" Precision="16" Scale="0" Type="numeric" />
+          <Property Name="ten_loaiMon" MaxLength="256" Type="nvarchar" />
         </EntityType>
         <Function Name="bao_cao_ct_hd" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="ngay_tu" Type="char" Mode="In" />
@@ -267,7 +249,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="quanLyCafeModelStoreContainer">
           <EntitySet Name="Account" EntityType="Self.Account" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ban" EntityType="Self.ban" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="dvt" EntityType="Self.dvt" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="hoa_don" EntityType="Self.hoa_don" Schema="dbo" store:Type="Tables" />
@@ -281,7 +262,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vat_tu" EntityType="Self.vat_tu" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vmon" EntityType="Self.vmon" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -307,14 +287,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <Property Name="password" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
           <Property Name="loai_tk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="displayname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ban">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ma_ban" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-          <Property Name="ten_ban" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="chi_tiet_hoa_don">
           <Key>
@@ -419,8 +391,8 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="tai_khoan" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="tai_khoan" MaxLength="16" FixedLength="true" Unicode="false" Type="String" />
           <Property Name="id1" Type="Boolean" />
           <Property Name="id2" Type="Boolean" />
           <Property Name="id3" Type="Boolean" />
@@ -470,16 +442,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <Property Name="ma_dvt2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="sl" Type="Int32" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
         <EntityType Name="vat_tu">
           <Key>
             <PropertyRef Name="id" />
@@ -493,16 +455,15 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-          <Property Name="ten_mon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-          <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-          <Property Name="gia" Type="Decimal" Precision="16" Scale="0" />
-          <Property Name="ten_loaiMon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+          <Property Name="id" Nullable="false" Type="Int32" />
+          <Property Name="ma_mon" MaxLength="8" FixedLength="true" Unicode="false" Type="String" />
+          <Property Name="ten_mon" MaxLength="256" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="ma_loaiMon" MaxLength="8" FixedLength="true" Unicode="false" Type="String" />
+          <Property Name="gia" Precision="16" Scale="0" Type="Decimal" />
+          <Property Name="ten_loaiMon" MaxLength="256" FixedLength="false" Unicode="true" Type="String" />
         </EntityType>
         <EntityContainer Name="quanLyCafeEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Account" EntityType="Self.Account" />
-          <EntitySet Name="ban" EntityType="Self.ban" />
           <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" />
           <EntitySet Name="dvt" EntityType="Self.dvt" />
           <EntitySet Name="hoa_don" EntityType="Self.hoa_don" />
@@ -516,7 +477,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
           <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" />
           <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" />
           <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="vat_tu" EntityType="Self.vat_tu" />
           <EntitySet Name="vmon" EntityType="Self.vmon" />
           <FunctionImport Name="bao_cao_ct_hd">
@@ -597,15 +557,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="loai_tk" ColumnName="loai_tk" />
                 <ScalarProperty Name="displayname" ColumnName="displayname" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ban">
-            <EntityTypeMapping TypeName="quanLyCafeModel.ban">
-              <MappingFragment StoreEntitySet="ban">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="ma_ban" ColumnName="ma_ban" />
-                <ScalarProperty Name="ten_ban" ColumnName="ten_ban" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -773,17 +724,6 @@ warning 6002: The table/view 'quanLyCafe.dbo.vmon' does not have a primary key d
                 <ScalarProperty Name="ma_dvt" ColumnName="ma_dvt" />
                 <ScalarProperty Name="ma_dvt2" ColumnName="ma_dvt2" />
                 <ScalarProperty Name="sl" ColumnName="sl" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="quanLyCafeModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="quanLyCafeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="tai_khoan" />
+    </Key>
+    <Property Name="tai_khoan" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
+    <Property Name="loai_tk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="displayname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="chi_tiet_hoa_don">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_cthd" Type="Int32" />
+    <Property Name="ma_hoadon" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="so_luong" Type="Int32" />
+    <Property Name="don_gia" Type="Decimal" Precision="16" Scale="2" />
+    <Property Name="thanh_tien" Type="Decimal" Precision="16" Scale="2" />
+    <Property Name="ngay_hd" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="dvt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_dvt" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="ten_dvt" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="hoa_don">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_hoadon" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="ma_kh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="thanh_tien" Type="Decimal" Precision="16" Scale="2" />
+    <Property Name="giam_gia" Type="Decimal" Precision="16" Scale="2" />
+    <Property Name="thanh_toan" Type="Decimal" Precision="16" Scale="2" />
+    <Property Name="ngay_hd" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="khach_hang">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_kh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_kh" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+    <Property Name="ma_loaikh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="loai_mon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_loaiMon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="loai_nv">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_loainv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_loainv" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="luong" Type="Decimal" Precision="16" Scale="0" />
+  </EntityType>
+  <EntityType Name="mon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_mon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="gia" Type="Decimal" Precision="16" Scale="0" />
+  </EntityType>
+  <EntityType Name="nha_cc">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_kh" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_kh" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="nhan_vien">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_nv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_nv" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="dia_chi" Type="String" MaxLength="512" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="128" FixedLength="true" Unicode="false" />
+    <Property Name="ma_loainv" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="he_so" Type="Double" />
+    <Property Name="so_cmnd" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="phan_quyen">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="tai_khoan" MaxLength="16" FixedLength="true" Unicode="false" Type="String" />
+    <Property Name="id1" Type="Boolean" />
+    <Property Name="id2" Type="Boolean" />
+    <Property Name="id3" Type="Boolean" />
+    <Property Name="id4" Type="Boolean" />
+    <Property Name="id5" Type="Boolean" />
+    <Property Name="id6" Type="Boolean" />
+    <Property Name="id7" Type="Boolean" />
+    <Property Name="id8" Type="Boolean" />
+    <Property Name="id9" Type="Boolean" />
+    <Property Name="id10" Type="Boolean" />
+    <Property Name="id11" Type="Boolean" />
+    <Property Name="id12" Type="Boolean" />
+    <Property Name="id13" Type="Boolean" />
+    <Property Name="id14" Type="Boolean" />
+    <Property Name="id15" Type="Boolean" />
+    <Property Name="id16" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="phieu_nhap_kho">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_vt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="so_luong" Type="Double" />
+    <Property Name="ngay_nhap" Type="DateTime" Precision="3" />
+    <Property Name="don_gia" Type="Decimal" Precision="16" Scale="0" />
+    <Property Name="thanh_tien" Type="Decimal" Precision="16" Scale="0" />
+    <Property Name="ma_ncc" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ma_dvt" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="phieu_xuat_kho">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_vt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="so_luong" Type="Double" />
+    <Property Name="ngay_nhap" Type="DateTime" Precision="0" />
+    <Property Name="dvt" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qui_doivt">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_dvt" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="ma_dvt2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="sl" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vat_tu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ma_vt" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
+    <Property Name="ten_vt" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ma_dvt" Type="String" MaxLength="8" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="vmon">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Nullable="false" Type="Int32" />
+    <Property Name="ma_mon" MaxLength="8" FixedLength="true" Unicode="false" Type="String" />
+    <Property Name="ten_mon" MaxLength="256" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="ma_loaiMon" MaxLength="8" FixedLength="true" Unicode="false" Type="String" />
+    <Property Name="gia" Precision="16" Scale="0" Type="Decimal" />
+    <Property Name="ten_loaiMon" MaxLength="256" FixedLength="false" Unicode="true" Type="String" />
+  </EntityType>
+  <EntityContainer Name="quanLyCafeEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Account" EntityType="Self.Account" />
+    <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" />
+    <EntitySet Name="dvt" EntityType="Self.dvt" />
+    <EntitySet Name="hoa_don" EntityType="Self.hoa_don" />
+    <EntitySet Name="khach_hang" EntityType="Self.khach_hang" />
+    <EntitySet Name="loai_mon" EntityType="Self.loai_mon" />
+    <EntitySet Name="loai_nv" EntityType="Self.loai_nv" />
+    <EntitySet Name="mon" EntityType="Self.mon" />
+    <EntitySet Name="nha_cc" EntityType="Self.nha_cc" />
+    <EntitySet Name="nhan_vien" EntityType="Self.nhan_vien" />
+    <EntitySet Name="phan_quyen" EntityType="Self.phan_quyen" />
+    <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" />
+    <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" />
+    <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" />
+    <EntitySet Name="vat_tu" EntityType="Self.vat_tu" />
+    <EntitySet Name="vmon" EntityType="Self.vmon" />
+    <FunctionImport Name="bao_cao_ct_hd">
+      <Parameter Name="ngay_tu" Mode="In" Type="String" />
+      <Parameter Name="ngay_den" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="bao_cao_hd">
+      <Parameter Name="ngay_tu" Mode="In" Type="String" />
+      <Parameter Name="ngay_den" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="bao_cao_nhap_kho">
+      <Parameter Name="ma_vt" Mode="In" Type="String" />
+      <Parameter Name="ngay_tu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="bao_cao_ton_kho">
+      <Parameter Name="ma_vt" Mode="In" Type="String" />
+      <Parameter Name="ngay_tu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="bao_cao_xuat_kho">
+      <Parameter Name="ma_vt" Mode="In" Type="String" />
+      <Parameter Name="ngay_tu" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="column_chart">
+      <Parameter Name="nam" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(quanLyCafeModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(quanLyCafeModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

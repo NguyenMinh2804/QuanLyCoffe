@@ -49,8 +49,8 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBox x:Name="manv" Grid.Row="0" Grid.Column="0" Margin="5 5 100 0" materialDesign:HintAssist.Hint="Mã nhân viên" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
-                    <TextBox x:Name="ten"  Grid.Row="1" Grid.Column="0" Margin="5 0 100 0" materialDesign:HintAssist.Hint="Tên nhân viên" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox x:Name="manv" Grid.Row="0" Grid.Column="0" Margin="5 5 100 0" materialDesign:HintAssist.Hint="Mã nhà cung cấp" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                    <TextBox x:Name="ten"  Grid.Row="1" Grid.Column="0" Margin="5 0 100 0" materialDesign:HintAssist.Hint="Tên nhà cung cấp" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox x:Name="diachi"  Grid.Row="2" Grid.Column="0" Margin="5 0 100 0" materialDesign:HintAssist.Hint="Địa chỉ" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox x:Name="dienthoai"  Grid.Row="0" Grid.Column="1" Margin="5 0 100 0" materialDesign:HintAssist.Hint="Điện thoại" PreviewTextInput="TextBox_PreviewTextInput" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
                     <TextBox x:Name="email"  Grid.Row="1" Grid.Column="1" Margin="5 0 100 0" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />

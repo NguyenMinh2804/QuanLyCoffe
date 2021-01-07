@@ -55,7 +55,7 @@ namespace Cafe_Management3
         {
             var context = new quanLyCafeEntities();
             var table = new DataTable();
-            string query = String.Format("select ROW_NUMBER() over(order by ma_kh) as Stt, rtrim(ma_kh) as N'Mã khách hàng', ten_kh as N'Tên khách hàng', dia_chi as N'Địa chỉ', rtrim(sdt) as N'Số điện thoại', rtrim(email) as N'Email' from nha_cc");
+            string query = String.Format("select ROW_NUMBER() over(order by ma_kh) as Stt, rtrim(ma_kh) as N'Mã nhà cung cấp', ten_kh as N'Tên nhà cung cấp', dia_chi as N'Địa chỉ', rtrim(sdt) as N'Số điện thoại', rtrim(email) as N'Email' from nha_cc");
             SqlConnection connection = new SqlConnection(context.Database.Connection.ConnectionString);
             using (var da = new SqlDataAdapter(query, connection))
             {

@@ -75,7 +75,7 @@
                         CommandParameter="{Binding ElementName=loginWindow}"
                         Style="{StaticResource MaterialDesignRaisedLightButton}"
                         Width="100"
-                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Thoát">
+                        ToolTip="Resource name: MaterialDesignRaisedLightButton" Content="Thoát" Click="Button_Click_1">
                     </Button>
                 </Grid>
             </Grid>

@@ -243,6 +243,7 @@ namespace Cafe_Management3
                     tien_hang.Text = "0";
                     giam_gia.Text = "0";
                     thanh_toan.Text = "0";
+                    MessageBox.Show("Thanh toán thành công");
                 }
             }
             else if (dialogResult == MessageBoxResult.No)

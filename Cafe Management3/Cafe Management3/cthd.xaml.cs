@@ -55,8 +55,8 @@ namespace Cafe_Management3
                     string quey = string.Format("update hoa_don set status = 1 where ma_hoadon = '{0}'", ma_hd);
                     int noOfRowUpdated = ctx.Database.ExecuteSqlCommand(quey);
                     this.Close();
-                    OrderWindow main = (OrderWindow)Application.Current.MainWindow;
-                    main.load_hd();
+                    //OrderWindow main = (OrderWindow)Application.Current.MainWindow;
+                    //main.load_hd();
                 }
 
             }

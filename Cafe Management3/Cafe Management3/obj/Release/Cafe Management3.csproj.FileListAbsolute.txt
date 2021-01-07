@@ -1,0 +1,84 @@
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\Cafe Management3.exe.config
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\Cafe Management3.exe
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\Cafe Management3.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\EntityFramework.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\MaterialDesignColors.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\Microsoft.Expression.Interactions.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\System.Windows.Interactivity.dll
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\EntityFramework.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\MaterialDesignColors.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\MaterialDesignThemes.Wpf.pdb
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\MaterialDesignThemes.Wpf.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\Microsoft.Expression.Interactions.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\bin\Release\System.Windows.Interactivity.xml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.csprojAssemblyReference.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.csproj.ResolveComReference.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Acc.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\AccountWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Baocaoctdoanhthu.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ExportSiteeReport.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\PhanQuyen.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ReportSite.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ImportSiteeReport.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ChartColumn.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ExxportSite.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ImportSite.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\cthd.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\CustomerWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Baocaodoanhthu.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ConvertUnit.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ItemWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\KindStaffWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Supplier.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\StaffWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\KindSustenanceWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Login.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\MainWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\OrderWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\SustenanceWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\UnitWindow.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\UserControlA\ControlBarUc.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Window1.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\App.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3_Content.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3_MarkupCompile.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3_MarkupCompile.lref
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\App.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Acc.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\AccountWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Baocaoctdoanhthu.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ExportSiteeReport.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\PhanQuyen.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ReportSite.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ImportSiteeReport.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ChartColumn.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ExxportSite.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ImportSite.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\cthd.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\CustomerWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Baocaodoanhthu.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ConvertUnit.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ItemWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\KindStaffWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Supplier.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\StaffWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\KindSustenanceWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Login.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\MainWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\OrderWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\ResourceXAML\MainResource.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\SustenanceWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\UnitWindow.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\UserControlA\ControlBarUc.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Window1.baml
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.g.resources
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe_Management3.Properties.Resources.resources
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.csproj.GenerateResource.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.csproj.CopyComplete
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.exe
+C:\Users\ADMIN\source\repos\Cafe Management3\Cafe Management3\obj\Release\Cafe Management3.pdb

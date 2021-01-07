@@ -28,7 +28,6 @@ namespace Cafe_Management3.Model
         }
     
         public virtual DbSet<Account> Account { get; set; }
-        public virtual DbSet<ban> ban { get; set; }
         public virtual DbSet<chi_tiet_hoa_don> chi_tiet_hoa_don { get; set; }
         public virtual DbSet<dvt> dvt { get; set; }
         public virtual DbSet<hoa_don> hoa_don { get; set; }
@@ -42,7 +41,6 @@ namespace Cafe_Management3.Model
         public virtual DbSet<phieu_nhap_kho> phieu_nhap_kho { get; set; }
         public virtual DbSet<phieu_xuat_kho> phieu_xuat_kho { get; set; }
         public virtual DbSet<qui_doivt> qui_doivt { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<vat_tu> vat_tu { get; set; }
         public virtual DbSet<vmon> vmon { get; set; }
     

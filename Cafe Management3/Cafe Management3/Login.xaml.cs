@@ -59,5 +59,10 @@ namespace Cafe_Management3
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu!");
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

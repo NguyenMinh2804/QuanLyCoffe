@@ -55,7 +55,7 @@
             </materialDesign:Card>
             <materialDesign:Card Grid.Row="1" Margin="5">
                 <WrapPanel>
-                    <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100"></Button>
+                    <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding AddCommand}" Content="Thêm" Margin="5" Width="100" Click="Button_Click"></Button>
                     <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding EditCommand}" Content="Sửa" Margin="5" Width="100"></Button>
                     <Button Background="SteelBlue" Foreground="Black" BorderBrush="Green" Command="{Binding DeleteCommand}" Content="Xóa" Width="100"/>
                 </WrapPanel>

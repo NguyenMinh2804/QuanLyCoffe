@@ -9,14 +9,6 @@
     <Property Name="loai_tk" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="displayname" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityType Name="ban">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ma_ban" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-    <Property Name="ten_ban" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
-  </EntityType>
   <EntityType Name="chi_tiet_hoa_don">
     <Key>
       <PropertyRef Name="id" />
@@ -120,8 +112,8 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="tai_khoan" Type="String" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+    <Property Name="tai_khoan" MaxLength="16" FixedLength="true" Unicode="false" Type="String" />
     <Property Name="id1" Type="Boolean" />
     <Property Name="id2" Type="Boolean" />
     <Property Name="id3" Type="Boolean" />
@@ -171,16 +163,6 @@
     <Property Name="ma_dvt2" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
     <Property Name="sl" Type="Int32" />
   </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="vat_tu">
     <Key>
       <PropertyRef Name="id" />
@@ -194,16 +176,15 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" />
-    <Property Name="ma_mon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-    <Property Name="ten_mon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="ma_loaiMon" Type="String" MaxLength="8" FixedLength="true" Unicode="false" />
-    <Property Name="gia" Type="Decimal" Precision="16" Scale="0" />
-    <Property Name="ten_loaiMon" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="id" Nullable="false" Type="Int32" />
+    <Property Name="ma_mon" MaxLength="8" FixedLength="true" Unicode="false" Type="String" />
+    <Property Name="ten_mon" MaxLength="256" FixedLength="false" Unicode="true" Type="String" />
+    <Property Name="ma_loaiMon" MaxLength="8" FixedLength="true" Unicode="false" Type="String" />
+    <Property Name="gia" Precision="16" Scale="0" Type="Decimal" />
+    <Property Name="ten_loaiMon" MaxLength="256" FixedLength="false" Unicode="true" Type="String" />
   </EntityType>
   <EntityContainer Name="quanLyCafeEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Account" EntityType="Self.Account" />
-    <EntitySet Name="ban" EntityType="Self.ban" />
     <EntitySet Name="chi_tiet_hoa_don" EntityType="Self.chi_tiet_hoa_don" />
     <EntitySet Name="dvt" EntityType="Self.dvt" />
     <EntitySet Name="hoa_don" EntityType="Self.hoa_don" />
@@ -217,7 +198,6 @@
     <EntitySet Name="phieu_nhap_kho" EntityType="Self.phieu_nhap_kho" />
     <EntitySet Name="phieu_xuat_kho" EntityType="Self.phieu_xuat_kho" />
     <EntitySet Name="qui_doivt" EntityType="Self.qui_doivt" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="vat_tu" EntityType="Self.vat_tu" />
     <EntitySet Name="vmon" EntityType="Self.vmon" />
     <FunctionImport Name="bao_cao_ct_hd">
